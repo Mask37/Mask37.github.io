@@ -11,6 +11,9 @@
       <strong>{{ __('post.copyright.author') + __('symbol.colon') }} </strong>
       {{- author }}
     {%- endif %}
+  <li>
+    <strong>{{ __('发布时间') + __('symbol.colon') }} </strong>
+    {{- page.date.format("YYYY年MM月DD日 HH:mm:ss ddd") }}
   </li>
   <li class="post-copyright-link">
     {%- if page.post_link %}
