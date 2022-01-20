@@ -4,11 +4,11 @@
 
 # 使用到的插件
 
-| 命令                                 | 描述              |
-| ------------------------------------ | ----------------- |
-| npm install hexo-deployer-git --save | 部署至GitHub page |
-|                                      |                   |
-|                                      |                   |
+| 命令                                     | 描述              |
+| ---------------------------------------- | ----------------- |
+| npm install hexo-deployer-git --save     | 部署至GitHub page |
+| npm install hexo-generator-search --save | 站内搜索          |
+|                                          |                   |
 
 # 使用步骤
 1. clone 本项目到本地
