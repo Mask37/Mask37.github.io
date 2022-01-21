@@ -21,29 +21,32 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
-<meta name="description" content="记自己需要记住的事">
-<meta property="og:type" content="website">
-<meta property="og:title" content="标签">
-<meta property="og:url" content="http://example.com/tags/index.html">
+<meta name="description" content="区别   区别点 重载方法 重写方法    参数列表 必须修改 一定不能修改   返回类型 可以修改 一定不能修改   异常 可以修改 可以减少或删除，一定不能抛出新的或者更广的异常   访问 可以修改 一定不能做更严格的限制（可以降低限制）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="重写与重载之间的区别">
+<meta property="og:url" content="http://example.com/2022/01/21/%E9%87%8D%E5%86%99%E4%B8%8E%E9%87%8D%E8%BD%BD%E4%B9%8B%E9%97%B4%E7%9A%84%E5%8C%BA%E5%88%AB/index.html">
 <meta property="og:site_name" content="写点东西😘">
-<meta property="og:description" content="记自己需要记住的事">
+<meta property="og:description" content="区别   区别点 重载方法 重写方法    参数列表 必须修改 一定不能修改   返回类型 可以修改 一定不能修改   异常 可以修改 可以减少或删除，一定不能抛出新的或者更广的异常   访问 可以修改 一定不能做更严格的限制（可以降低限制）">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-01-20T03:51:21.000Z">
-<meta property="article:modified_time" content="2022-01-20T06:27:38.804Z">
+<meta property="og:image" content="https://gitee.com/gzl_admin/picture_bed/raw/master/img/202112/20211230215337.png">
+<meta property="og:image" content="https://gitee.com/gzl_admin/picture_bed/raw/master/img/202112/20211230215346.png">
+<meta property="article:published_time" content="2022-01-20T16:46:04.000Z">
+<meta property="article:modified_time" content="2022-01-21T00:27:13.885Z">
 <meta property="article:author" content="Mask">
-<meta property="article:tag" content="gzling">
+<meta property="article:tag" content="重写">
+<meta property="article:tag" content="重载">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/gzl_admin/picture_bed/raw/master/img/202112/20211230215337.png">
 
 
-<link rel="canonical" href="http://example.com/tags/">
+<link rel="canonical" href="http://example.com/2022/01/21/%E9%87%8D%E5%86%99%E4%B8%8E%E9%87%8D%E8%BD%BD%E4%B9%8B%E9%97%B4%E7%9A%84%E5%8C%BA%E5%88%AB/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-CN","comments":"","permalink":"http://example.com/tags/index.html","path":"tags/index.html","title":"标签"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2022/01/21/%E9%87%8D%E5%86%99%E4%B8%8E%E9%87%8D%E8%BD%BD%E4%B9%8B%E9%97%B4%E7%9A%84%E5%8C%BA%E5%88%AB/","path":"2022/01/21/重写与重载之间的区别/","title":"重写与重载之间的区别"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>标签 | 写点东西😘
-</title>
+<title>重写与重载之间的区别 | 写点东西😘</title>
   
 
 
@@ -137,7 +140,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -150,6 +153,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8C%BA%E5%88%AB"><span class="nav-number">1.</span> <span class="nav-text">区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">2.</span> <span class="nav-text">总结</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -212,43 +216,201 @@
 </noscript>
 
 
-    <div class="main-inner page posts-expand">
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
   
   
 
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/21/%E9%87%8D%E5%86%99%E4%B8%8E%E9%87%8D%E8%BD%BD%E4%B9%8B%E9%97%B4%E7%9A%84%E5%8C%BA%E5%88%AB/">
 
-    
-    
-    
-    <div class="post-block" lang="zh-CN"><header class="post-header">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Mask">
+      <meta itemprop="description" content="记自己需要记住的事">
+    </span>
 
-<h1 class="post-title" itemprop="name headline">标签
-</h1>
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="写点东西😘">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          重写与重载之间的区别
+        </h1>
 
-<div class="post-meta-container">
+        <div class="post-meta-container">
+		
+          <div class="post-meta">
+	
+		<font color="red"><i class="fa fa-arrow-up"></i>
+		 <strong>置顶</strong></font>
+	
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2022-01-21 00:46:04 / 修改时间：08:27:13" itemprop="dateCreated datePublished" datetime="2022-01-21T00:46:04+08:00">2022-01-21</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E9%9D%A2%E8%AF%95/" itemprop="url" rel="index"><span itemprop="name">面试</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+        </span>
+    </span>
+
+  
+    <span id="/2022/01/21/%E9%87%8D%E5%86%99%E4%B8%8E%E9%87%8D%E8%BD%BD%E4%B9%8B%E9%97%B4%E7%9A%84%E5%8C%BA%E5%88%AB/" class="post-meta-item leancloud_visitors" data-flag-title="重写与重载之间的区别" title="阅读次数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>348</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
 </div>
 
-</header>
+        </div>
+      </header>
 
-      
-      
-      <div class="post-body"><div class="tag-cloud">
-  <div class="tag-cloud-title">
-    目前共计 2 个标签
-  </div>
-  <div class="tag-cloud-tags">
-    <a href="/tags/%E9%87%8D%E5%86%99/" style="font-size: 12px;" class="tag-cloud-0">重写</a> <a href="/tags/%E9%87%8D%E8%BD%BD/" style="font-size: 12px;" class="tag-cloud-0">重载</a>
-  </div>
-</div>
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h2><table>
+<thead>
+<tr>
+<th>区别点</th>
+<th>重载方法</th>
+<th>重写方法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>参数列表</td>
+<td>必须修改</td>
+<td>一定不能修改</td>
+</tr>
+<tr>
+<td>返回类型</td>
+<td>可以修改</td>
+<td>一定不能修改</td>
+</tr>
+<tr>
+<td>异常</td>
+<td>可以修改</td>
+<td>可以减少或删除，一定不能抛出新的或者更广的异常</td>
+</tr>
+<tr>
+<td>访问</td>
+<td><span style="color: #ff1493;">可以修改</span></td>
+<td>一定不能做更严格的限制（可以降低限制）</td>
+</tr>
+</tbody></table>
+<span id="more"></span>
 
-      </div>
-      
-      
-      
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>方法的重写(Overriding)和重载(Overloading)是java多态性的不同表现，重写是父类与子类之间多态性的一种表现，重载可以理解成多态的具体表现形式。</p>
+<ul>
+<li>方法重载是一个类中定义了多个方法名相同，而他们的参数的数量不同或者数量相同而类型和次序不同，则称为方法的重载（overloading）。</li>
+<li>方法重写在子类存在与父类的方法的名字相同，而且参数的个数于类型一样，返回的类型也一致，就称为方法的重写（overriding）</li>
+<li>方法的重载是一个类的多态性表现，而方法的重写是子类与父类的一种多态性表现。</li>
+</ul>
+<p><img src="https://gitee.com/gzl_admin/picture_bed/raw/master/img/202112/20211230215337.png"><br><img src="https://gitee.com/gzl_admin/picture_bed/raw/master/img/202112/20211230215346.png"></p>
+
     </div>
 
     
     
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div></div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechatpay.png" alt="Mask 微信">
+        <span>微信</span>
+      </div>
+      <div>
+        <img src="/images/alipay.png" alt="Mask 支付宝">
+        <span>支付宝</span>
+      </div>
+
+  </div>
+</div>
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Mask
+  <li>
+    <strong>发布时间： </strong>2022年01月21日 00:46:04 周五
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="http://example.com/2022/01/21/%E9%87%8D%E5%86%99%E4%B8%8E%E9%87%8D%E8%BD%BD%E4%B9%8B%E9%97%B4%E7%9A%84%E5%8C%BA%E5%88%AB/" title="重写与重载之间的区别">http://example.com/2022/01/21/重写与重载之间的区别/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/%E9%87%8D%E5%86%99/" rel="tag"><i class="fa fa-tag"></i> 重写</a>
+              <a href="/tags/%E9%87%8D%E8%BD%BD/" rel="tag"><i class="fa fa-tag"></i> 重载</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/01/20/hello-world/" rel="prev" title="Hello World">
+                  <i class="fa fa-chevron-left"></i> Hello World
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
 
 
 </div>
