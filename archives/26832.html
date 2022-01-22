@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.0.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/tiger-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/tiger-16x16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="baidu-site-verification" content="code-PNYgN40PW1">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"www.gzling.top","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":true,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<meta name="description" content="基于 Hexo 6.0.0 + hexo-theme-next 8.9.0 + GitHub Pages 搭建个人博客详细步骤。后期不定时更新...">
+<meta property="og:type" content="article">
+<meta property="og:title" content="GitHub + Hexo 打造个人网站详细过程">
+<meta property="og:url" content="http://www.gzling.top/archives/26832.html">
+<meta property="og:site_name" content="写点东西😘">
+<meta property="og:description" content="基于 Hexo 6.0.0 + hexo-theme-next 8.9.0 + GitHub Pages 搭建个人博客详细步骤。后期不定时更新...">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://pic3.zhimg.com/80/v2-8b1cbe253d6e0301bd9a68c6f98a9f52_720w.jpg">
+<meta property="og:image" content="https://gitee.com/gzl_admin/picture_bed/raw/master/img/2022/01/20220120000145.png">
+<meta property="og:image" content="https://gitee.com/gzl_admin/picture_bed/raw/master/img/2022/01/20220120000258.png">
+<meta property="og:image" content="https://gitee.com/gzl_admin/picture_bed/raw/master/img/2022/01/v2-72a3f22c080e99343c3cc4aabce10e3c_720w.jpg">
+<meta property="og:image" content="https://gitee.com/gzl_admin/picture_bed/raw/master/img/2022/01/20220120000822.png">
+<meta property="og:image" content="https://gitee.com/gzl_admin/picture_bed/raw/master/img/2022/01/20220120001031.png">
+<meta property="og:image" content="https://gitee.com/gzl_admin/picture_bed/raw/master/img/2022/01/20220120001121.png">
+<meta property="og:image" content="http://img.gzling.top/img/2022/0120220120095550.png">
+<meta property="og:image" content="https://pic4.zhimg.com/80/v2-4252029e5634bf91c7d58916ae2b8ac3_720w.jpg">
+<meta property="og:image" content="https://pic1.zhimg.com/80/v2-279ac5149b577f04dc099defbb12eaa8_720w.jpg">
+<meta property="og:image" content="https://pic3.zhimg.com/80/v2-47323ad4490e206aef93a3d68f0670b6_720w.jpg">
+<meta property="og:image" content="https://pic3.zhimg.com/80/v2-40222b3a295bb692aac22829a8ec3be2_720w.jpg">
+<meta property="og:image" content="https://pic4.zhimg.com/80/v2-85ba6dda906f22dea4c03df2b47d994b_720w.jpg">
+<meta property="og:image" content="https://pic1.zhimg.com/80/v2-79abfff91af3f520e24cb91acf6aa994_720w.jpg">
+<meta property="og:image" content="http://img.gzling.top/img/2022/01image-20220120103951429.png">
+<meta property="og:image" content="https://gitee.com/gzl_admin/picture_bed/raw/master/img/2022/01/image-20220120104542966.png">
+<meta property="og:image" content="https://blogdata-1258545379.cos.ap-shanghai.myqcloud.com/20190124/5308475-78e64c0a80bb559e.gif">
+<meta property="og:image" content="https://gitee.com/gzl_admin/picture_bed/raw/master/img/2022/01/20220120150527.png">
+<meta property="og:image" content="https://imgconvert.csdnimg.cn/aHR0cDovL2ZsdW5nZ2cub3NzLWNuLXNoZW56aGVuLmFsaXl1bmNzLmNvbS9oZXhvSW1nLzIwMTkxMjI2MjMvMjAxOTEyMjYyMzE3MjctMTU5OTYwLnBuZw?x-oss-process=image/format,png">
+<meta property="og:image" content="https://gitee.com/gzl_admin/picture_bed/raw/master/img/2022/01/20220121005535.png">
+<meta property="og:image" content="https://gitee.com/gzl_admin/picture_bed/raw/master/img/2022/01/20220121005643.png">
+<meta property="og:image" content="https://gitee.com/gzl_admin/picture_bed/raw/master/img/2022/01/20220121010103.png">
+<meta property="og:image" content="https://gitee.com/gzl_admin/picture_bed/raw/master/img/2022/01/20220121010049.png">
+<meta property="og:image" content="https://gitee.com/gzl_admin/picture_bed/raw/master/img/2022/01/20220121010305.png">
+<meta property="og:image" content="c:/Users/30600/AppData/Roaming/Typora/typora-user-images/image-20220121014456168.png">
+<meta property="og:image" content="https://gitee.com/gzl_admin/picture_bed/raw/master/img/2022/01/20220121025013.png">
+<meta property="og:image" content="https://gitee.com/gzl_admin/picture_bed/raw/master/img/2022/01/image-20220121025251352.png">
+<meta property="og:image" content="https://gitee.com/gzl_admin/picture_bed/raw/master/img/2022/01/20220121025317.png">
+<meta property="og:image" content="https://gitee.com/gzl_admin/picture_bed/raw/master/img/2022/01/20220121112857.png">
+<meta property="og:image" content="https://gitee.com/gzl_admin/picture_bed/raw/master/img/2022/01/20220121115126.png">
+<meta property="og:image" content="https://gitee.com/gzl_admin/picture_bed/raw/master/img/2022/01/20220121115339.png">
+<meta property="og:image" content="https://gitee.com/gzl_admin/picture_bed/raw/master/img/2022/01/20220121173643.png">
+<meta property="og:image" content="https://gitee.com/gzl_admin/picture_bed/raw/master/img/2022/01/20220121173700.png">
+<meta property="og:image" content="https://gitee.com/gzl_admin/picture_bed/raw/master/img/2022/01/20220121173735.png">
+<meta property="og:image" content="https://gitee.com/gzl_admin/picture_bed/raw/master/img/2022/01/20220121174354.png">
+<meta property="og:image" content="https://gitee.com/gzl_admin/picture_bed/raw/master/img/2022/01/20220121174445.png">
+<meta property="og:image" content="https://gitee.com/gzl_admin/picture_bed/raw/master/img/2022/01/20220122123234.png">
+<meta property="og:image" content="https://gitee.com/gzl_admin/picture_bed/raw/master/img/2022/01/20220122123413.png">
+<meta property="og:image" content="https://gitee.com/gzl_admin/picture_bed/raw/master/img/2022/01/20220122124444.png">
+<meta property="og:image" content="https://gitee.com/gzl_admin/picture_bed/raw/master/img/2022/01/20220122134048.png">
+<meta property="og:image" content="https://gitee.com/gzl_admin/picture_bed/raw/master/img/2022/01/20220122144956.png">
+<meta property="og:image" content="https://gitee.com/gzl_admin/picture_bed/raw/master/img/2022/01/20220122145208.png">
+<meta property="og:image" content="https://gitee.com/gzl_admin/picture_bed/raw/master/img/2022/01/20220122144849.png">
+<meta property="article:published_time" content="2022-01-22T09:10:43.000Z">
+<meta property="article:modified_time" content="2022-01-22T09:52:30.730Z">
+<meta property="article:author" content="Mask">
+<meta property="article:tag" content="Hexo">
+<meta property="article:tag" content="Next">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pic3.zhimg.com/80/v2-8b1cbe253d6e0301bd9a68c6f98a9f52_720w.jpg">
+
+
+<link rel="canonical" href="http://www.gzling.top/archives/26832.html">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://www.gzling.top/archives/26832.html","path":"archives/26832.html","title":"GitHub + Hexo 打造个人网站详细过程"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>GitHub + Hexo 打造个人网站详细过程 | 写点东西😘</title>
+  
+
+  <script src="/js/third-party/analytics/baidu-analytics.js"></script>
+  <script async src="https://hm.baidu.com/hm.js?5213e6c9eb35ff726e6730f9ee7c0759"></script>
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">写点东西😘</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">做自己喜欢做的事</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87"><span class="nav-number">1.</span> <span class="nav-text">前置环境准备</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99%E5%9F%9F%E5%90%8D"><span class="nav-number">1.1.</span> <span class="nav-text">个人网站域名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GitHub-%E5%88%9B%E5%BB%BA%E4%B8%AA%E4%BA%BA%E4%BB%93%E5%BA%93"><span class="nav-number">1.2.</span> <span class="nav-text">GitHub 创建个人仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-Git"><span class="nav-number">1.3.</span> <span class="nav-text">安装 Git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-Node-js"><span class="nav-number">1.4.</span> <span class="nav-text">安装 Node.js</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-Hexo"><span class="nav-number">2.</span> <span class="nav-text">安装 Hexo</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8E%A8%E9%80%81%E8%87%B3%E7%BD%91%E7%AB%99"><span class="nav-number">3.</span> <span class="nav-text">推送至网站</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo%E4%B8%8EGitHub%E5%85%B3%E8%81%94"><span class="nav-number">3.1.</span> <span class="nav-text">Hexo与GitHub关联</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D"><span class="nav-number">3.2.</span> <span class="nav-text">绑定域名</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BE%8E%E5%8C%96%E8%AE%BE%E7%BD%AE"><span class="nav-number">4.</span> <span class="nav-text">美化设置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AB%99%E7%82%B9%E5%9F%BA%E6%9C%AC%E8%AE%BE%E7%BD%AE"><span class="nav-number">4.1.</span> <span class="nav-text">站点基本设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NexT%E4%B8%BB%E9%A2%98"><span class="nav-number">4.2.</span> <span class="nav-text">NexT主题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9B%B4%E6%8D%A2%E4%B8%BB%E9%A2%98"><span class="nav-number">4.2.1.</span> <span class="nav-text">更换主题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8F%9C%E5%8D%95%E6%A0%8F%E5%BC%80%E5%90%AF%E8%B7%B3%E8%BD%AC%E9%A1%B5%E9%9D%A2"><span class="nav-number">4.2.2.</span> <span class="nav-text">菜单栏开启跳转页面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E5%8D%9A%E5%AE%A2%E5%9B%BE%E6%A0%87"><span class="nav-number">4.2.3.</span> <span class="nav-text">添加博客图标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%BC%A0%E6%A0%87%E7%82%B9%E5%87%BB%E7%89%B9%E6%95%88"><span class="nav-number">4.2.4.</span> <span class="nav-text">鼠标点击特效</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E5%A4%B4%E5%83%8F"><span class="nav-number">4.2.5.</span> <span class="nav-text">设置头像</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%A7%E8%BE%B9%E6%A0%8F%E7%A4%BE%E4%BA%A4%E5%B0%8F%E5%9B%BE%E6%A0%87%E8%AE%BE%E7%BD%AE"><span class="nav-number">4.2.6.</span> <span class="nav-text">侧边栏社交小图标设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E7%AB%A0%E6%9C%AB%E5%B0%BE%E7%9A%84%E6%A0%87%E7%AD%BE%E5%9B%BE%E6%A0%87%E4%BF%AE%E6%94%B9"><span class="nav-number">4.2.7.</span> <span class="nav-text">文章末尾的标签图标修改</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BF%E9%97%AE%E9%87%8F%E7%BB%9F%E8%AE%A1"><span class="nav-number">4.2.8.</span> <span class="nav-text">访问量统计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%AF%E5%8A%A8%E9%98%85%E8%AF%BB%E6%9B%B4%E5%A4%9A%E6%8C%89%E9%92%AE"><span class="nav-number">4.2.9.</span> <span class="nav-text">启动阅读更多按钮</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%9A%E6%96%87%E6%A8%A1%E6%9D%BF%E8%AE%BE%E7%BD%AE"><span class="nav-number">4.2.10.</span> <span class="nav-text">博文模板设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E7%AB%A0%E9%A1%B6%E7%BD%AE"><span class="nav-number">4.2.11.</span> <span class="nav-text">文章顶置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%A8%E6%96%87%E7%AB%A0%E5%BA%95%E9%83%A8%E5%A2%9E%E5%8A%A0%E7%89%88%E6%9D%83%E4%BF%A1%E6%81%AF"><span class="nav-number">4.2.12.</span> <span class="nav-text">在文章底部增加版权信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E6%89%93%E8%B5%8F"><span class="nav-number">4.2.13.</span> <span class="nav-text">添加打赏</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E5%9D%97%E7%BE%8E%E5%8C%96%EF%BC%88%E5%BC%95%E6%93%8E%E3%80%81%E8%A1%8C%E5%8F%B7%E3%80%81%E5%A4%8D%E5%88%B6%E6%8C%89%E9%92%AE%EF%BC%89"><span class="nav-number">4.2.14.</span> <span class="nav-text">代码块美化（引擎、行号、复制按钮）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%A8Footer%E6%B7%BB%E5%8A%A0%E7%AB%99%E7%82%B9%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4"><span class="nav-number">4.2.15.</span> <span class="nav-text">在Footer添加站点运行时间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E6%96%87%E7%AB%A0%E7%BB%9F%E8%AE%A1%E5%8A%9F%E8%83%BD"><span class="nav-number">4.2.16.</span> <span class="nav-text">实现文章统计功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RSS%E8%AE%A2%E9%98%85"><span class="nav-number">4.2.17.</span> <span class="nav-text">RSS订阅</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BD%91%E7%AB%99%E5%8F%B3%E4%B8%8A%E8%A7%92GitHub%E7%9A%84%E8%B7%B3%E8%BD%AC%E6%8C%89%E9%92%AE"><span class="nav-number">4.2.18.</span> <span class="nav-text">网站右上角GitHub的跳转按钮</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E5%8A%A8%E4%BF%9D%E5%AD%98%E4%B8%8A%E6%AC%A1%E9%98%85%E8%AF%BB%E8%BF%9B%E5%BA%A6"><span class="nav-number">4.2.19.</span> <span class="nav-text">自动保存上次阅读进度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%98%BE%E7%A4%BA%E5%BD%93%E5%89%8D%E6%B5%8F%E8%A7%88%E8%BF%9B%E5%BA%A6"><span class="nav-number">4.2.20.</span> <span class="nav-text">显示当前浏览进度</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%B9%E5%BC%8F%E4%B8%80"><span class="nav-number">4.2.20.1.</span> <span class="nav-text">方式一</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%B9%E5%BC%8F%E4%BA%8C"><span class="nav-number">4.2.20.2.</span> <span class="nav-text">方式二</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Footer-%E9%A1%B5%E8%84%9A%E8%AE%BE%E7%BD%AE"><span class="nav-number">4.2.21.</span> <span class="nav-text">Footer &#x2F; 页脚设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E8%AF%84%E8%AE%BA"><span class="nav-number">4.2.22.</span> <span class="nav-text">添加评论</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Url-%E6%8C%81%E4%B9%85%E5%8C%96"><span class="nav-number">4.2.23.</span> <span class="nav-text">Url 持久化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%83%8C%E6%99%AF%E6%B7%BB%E5%8A%A0%E5%8A%A8%E6%80%81%E7%BA%BF%E6%9D%A1%E6%95%88%E6%9E%9C"><span class="nav-number">4.2.24.</span> <span class="nav-text">背景添加动态线条效果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SEO%E6%94%AF%E6%8C%81"><span class="nav-number">4.2.25.</span> <span class="nav-text">SEO支持</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8D%9A%E5%AE%A2%E5%86%85%E5%AE%B9%E6%8E%A8%E9%80%81"><span class="nav-number">4.2.25.1.</span> <span class="nav-text">博客内容推送</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E7%AB%A0%E6%9C%AB%E5%B0%BE%E7%BB%9F%E4%B8%80%E6%B7%BB%E5%8A%A0%E2%80%9C%E6%9C%AC%E6%96%87%E7%BB%93%E6%9D%9F%E2%80%9D%E6%A0%87%E8%AE%B0"><span class="nav-number">4.2.26.</span> <span class="nav-text">文章末尾统一添加“本文结束”标记</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0%E6%97%B6%E8%87%AA%E5%8A%A8%E6%89%93%E5%BC%80%E7%BC%96%E8%BE%91%E5%99%A8"><span class="nav-number">4.3.</span> <span class="nav-text">Hexo添加文章时自动打开编辑器</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Mask"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Mask</p>
+  <div class="site-description" itemprop="description">记自己需要记住的事</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Mask37" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Mask37" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/Mask37" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://www.gzling.top/archives/26832.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Mask">
+      <meta itemprop="description" content="记自己需要记住的事">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="写点东西😘">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          GitHub + Hexo 打造个人网站详细过程
+        </h1>
+
+        <div class="post-meta-container">
+		
+          <div class="post-meta">
+	
+		<font color="red"><i class="fa fa-arrow-up"></i>
+		 <strong>置顶</strong></font>
+	
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2022-01-22 17:10:43 / 修改时间：17:52:30" itemprop="dateCreated datePublished" datetime="2022-01-22T17:10:43+08:00">2022-01-22</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/" itemprop="url" rel="index"><span itemprop="name">网站搭建</span></a>
+        </span>
+    </span>
+
+  
+    <span id="/archives/26832.html" class="post-meta-item leancloud_visitors" data-flag-title="GitHub + Hexo 打造个人网站详细过程" title="阅读次数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>19k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>17 分钟</span>
+    </span>
+</div>
+
+            <div class="post-description">基于 Hexo 6.0.0 + hexo-theme-next 8.9.0 + GitHub Pages 搭建个人博客详细步骤。后期不定时更新...</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>GitHub + Hexo 打造个人网站详细过程</p>
+<p>官方文档：<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">https://hexo.io/zh-cn/docs/</a></p>
+<h1 id="前置环境准备"><a href="#前置环境准备" class="headerlink" title="前置环境准备"></a>前置环境准备</h1><h2 id="个人网站域名"><a href="#个人网站域名" class="headerlink" title="个人网站域名"></a>个人网站域名</h2><p>这个完全看个人，可有可无的东西。本人就在阿里备案了一个 <code>.top</code> 的域名，比较便宜，10年189元。域名购买非常简单，备案比较麻烦。需要在阿里有台服务器进行绑定备案，耗时也比较久，大概20多天</p>
+<h2 id="GitHub-创建个人仓库"><a href="#GitHub-创建个人仓库" class="headerlink" title="GitHub 创建个人仓库"></a>GitHub 创建个人仓库</h2><p>登录到GitHub,如果没有GitHub帐号，使用你的邮箱注册GitHub帐号，点击GitHub中的New repository创建新仓库，仓库名应该为：<code>用户名.http://github.io</code> 这个用户名使用你的GitHub帐号名称代替，这是固定写法，比如我的仓库名为：<code>linxi37.github.io</code>。</p>
+<h2 id="安装-Git"><a href="#安装-Git" class="headerlink" title="安装 Git"></a>安装 Git</h2><p>什么是Git ?简单来说Git是开源的分布式版本控制系统，用于敏捷高效地处理项目。我们网站在本地搭建好了，需要使用Git同步到GitHub上。网上也能搜到基础知识。从 <a target="_blank" rel="noopener" href="https://git-scm.com/download/win">Git 官网</a>下载自己机器的位数进行安装。安装成功后，将你的 Git 与 GitHub 账号绑定，鼠标右击打开 Git Bash<br><img src="https://pic3.zhimg.com/80/v2-8b1cbe253d6e0301bd9a68c6f98a9f52_720w.jpg"></p>
+<p>或者在菜单里搜索Git Bash，设置user.name和user.email配置信息：</p>
+<pre class="language-none"><code class="language-none">git config --global user.name &quot;你的GitHub用户名&quot;
+git config --global user.email &quot;你的GitHub注册邮箱&quot;</code></pre>
+
+<p>生成ssh密钥文件：</p>
+<pre class="language-none"><code class="language-none">ssh-keygen -t rsa -C &quot;你的GitHub注册邮箱&quot;</code></pre>
+
+<p>然后直接三个回车即可，默认不需要设置密码<br>然后找到生成的.ssh的文件夹中的id_rsa.pub密钥，将内容全部复制<br><img src="https://gitee.com/gzl_admin/picture_bed/raw/master/img/2022/01/20220120000145.png"><br><img src="https://gitee.com/gzl_admin/picture_bed/raw/master/img/2022/01/20220120000258.png"></p>
+<p>打开<a target="_blank" rel="noopener" href="https://github.com/settings/keys">GitHub_Settings_keys</a> 页面，新建new SSH Key</p>
+<p><img src="https://gitee.com/gzl_admin/picture_bed/raw/master/img/2022/01/v2-72a3f22c080e99343c3cc4aabce10e3c_720w.jpg"></p>
+<p>Title为标题，任意填即可，将刚刚复制的id_rsa.pub内容粘贴进去，最后点击Add SSH key。<br>在Git Bash中检测GitHub公钥设置是否成功，输入 ssh <a href="mailto:&#x67;&#105;&#x74;&#x40;&#103;&#x69;&#x74;&#104;&#x75;&#98;&#46;&#99;&#x6f;&#x6d;">&#x67;&#105;&#x74;&#x40;&#103;&#x69;&#x74;&#104;&#x75;&#98;&#46;&#99;&#x6f;&#x6d;</a> ：</p>
+<p><img src="https://gitee.com/gzl_admin/picture_bed/raw/master/img/2022/01/20220120000822.png"></p>
+<p>如上则说明成功。这里之所以设置GitHub密钥原因是，通过非对称加密的公钥与私钥来完成加密，公钥放置在GitHub上，私钥放置在自己的电脑里。GitHub要求每次推送代码都是合法用户，所以每次推送都需要输入账号密码验证推送用户是否是合法用户，为了省去每次输入密码的步骤，采用了ssh，当你推送的时候，git就会匹配你的私钥跟GitHub上面的公钥是否是配对的，若是匹配就认为你是合法用户，则允许推送。这样可以保证每次的推送都是正确合法的。</p>
+<h2 id="安装-Node-js"><a href="#安装-Node-js" class="headerlink" title="安装 Node.js"></a>安装 Node.js</h2><p>Hexo基于Node.js，Node.js下载地址：<a target="_blank" rel="noopener" href="https://nodejs.org/en/download/">Download | Node.js</a> 下载安装包，注意安装Node.js会包含环境变量及npm的安装，安装后，检测Node.js是否安装成功，在命令行中输入 <code>node -v</code> :<br><img src="https://gitee.com/gzl_admin/picture_bed/raw/master/img/2022/01/20220120001031.png"></p>
+<p>检测npm是否安装成功，在命令行中输入<code>npm -v</code> :<br><img src="https://gitee.com/gzl_admin/picture_bed/raw/master/img/2022/01/20220120001121.png"></p>
+<blockquote>
+<p>到这了，安装Hexo的前置环境已经全部搭建完成。</p>
+</blockquote>
+<h1 id="安装-Hexo"><a href="#安装-Hexo" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h1><p>Hexo就是我们的个人博客网站的框架， 这里需要自己在电脑常里创建一个文件夹，可以命名为Blog，Hexo框架与以后你自己发布的网页都在这个文件夹中。创建好后，进入文件夹中，打开doc窗口使用npm命令安装Hexo，输入：</p>
+<pre class="language-none"><code class="language-none">npm install -g hexo-cli </code></pre>
+
+<p>这个安装时间较长耐心等待，安装完成后，初始化我们的博客，输入：</p>
+<pre class="language-none"><code class="language-none">hexo init hexo</code></pre>
+
+<blockquote>
+<p>注意，这里的命令都是作用在刚刚创建的Blog文件夹中。</p>
+</blockquote>
+<p>为了检测我们的网站雏形，分别按顺序输入以下三条命令：</p>
+<pre class="language-none"><code class="language-none">hexo new test_my_site
+
+hexo g
+
+hexo s</code></pre>
+
+<p>这些命令在后面作介绍，完成后，打开浏览器输入地址：</p>
+<p>localhost:4000</p>
+<p>可以看出我们写出第一篇博客，只不过我下图是我修改过的配置，和你的显示不一样。</p>
+<p>现在来介绍常用的Hexo 命令</p>
+<p>npm install hexo -g #安装Hexo<br>npm update hexo -g #升级<br>hexo init #初始化博客</p>
+<p>命令简写<br>hexo n “我的博客” == hexo new “我的博客” #新建文章<br>hexo g == hexo generate #生成<br>hexo s == hexo server #启动服务预览<br>hexo d == hexo deploy #部署</p>
+<p>hexo server #Hexo会监视文件变动并自动更新，无须重启服务器<br>hexo server -s #静态模式<br>hexo server -p 5000 #更改端口<br>hexo server -i 192.168.1.1 #自定义 IP<br>hexo clean #清除缓存，若是网页正常情况下可以忽略这条命令</p>
+<p>刚刚的三个命令依次是新建一篇博客文章、生成网页、在本地预览的操作。</p>
+<h1 id="推送至网站"><a href="#推送至网站" class="headerlink" title="推送至网站"></a>推送至网站</h1><p>上面只是在本地预览，接下来要做的就是就是推送网站，也就是发布网站，让我们的网站可以被更多的人访问。在设置之前，需要解释一个概念，在blog根目录里的_config.yml文件称为站点配置文件，如下图<br><img src="http://img.gzling.top/img/2022/0120220120095550.png"></p>
+<p>进入根目录里的themes文件夹，里面也有个_config.yml文件，这个称为主题配置文件，如下图<br><img src="https://pic4.zhimg.com/80/v2-4252029e5634bf91c7d58916ae2b8ac3_720w.jpg"></p>
+<h2 id="Hexo与GitHub关联"><a href="#Hexo与GitHub关联" class="headerlink" title="Hexo与GitHub关联"></a>Hexo与GitHub关联</h2><p>下一步将我们的Hexo与GitHub关联起来，打开站点的配置文件_config.yml，翻到最后修改为：</p>
+<pre class="language-none"><code class="language-none">deploy:
+type: git
+repo: 这里填入你之前在GitHub上创建仓库的完整路径，记得加上 .git
+branch: master</code></pre>
+
+<p>参考如下：<br><img src="https://pic1.zhimg.com/80/v2-279ac5149b577f04dc099defbb12eaa8_720w.jpg"><br>保存站点配置文件。</p>
+<p>其实就是给hexo d 这个命令做相应的配置，让hexo知道你要把blog部署在哪个位置，很显然，我们部署在我们GitHub的仓库里。最后安装Git部署插件，输入命令：</p>
+<pre class="language-none"><code class="language-none">npm install hexo-deployer-git --save</code></pre>
+
+<p>这时，我们分别输入三条命令：</p>
+<pre class="language-none"><code class="language-none">hexo clean 
+hexo g 
+hexo d</code></pre>
+
+<p>其实第三条的 hexo d 就是部署网站命令，d是deploy的缩写。完成后，打开浏览器，在地址栏输入你的放置个人网站的仓库路径，即 <a target="_blank" rel="noopener" href="http://xxxx.github.io/">http://xxxx.github.io</a> (知乎排版可能会出现”http://“字样，参考下图) 比如我的xxxx就是我的GitHub用户名：<a target="_blank" rel="noopener" href="http://linxi37.github.io/">http://linxi37.github.io</a></p>
+<h2 id="绑定域名"><a href="#绑定域名" class="headerlink" title="绑定域名"></a>绑定域名</h2><p>虽然在Internet上可以访问我们的网站，但是网址是GitHub提供的:<a target="_blank" rel="noopener" href="http://xxxx.github.io/">http://xxxx.github.io</a>  而我们想使用我们自己的个性化域名，这就需要绑定我们自己的域名。这里演示的是在阿里云万网的域名绑定，在国内主流的域名代理厂商也就阿里云和腾讯云。登录到阿里云，进入管理控制台的域名列表，找到你的个性化域名，进入解析<br><img src="https://pic3.zhimg.com/80/v2-47323ad4490e206aef93a3d68f0670b6_720w.jpg"><br><img src="https://pic3.zhimg.com/80/v2-40222b3a295bb692aac22829a8ec3be2_720w.jpg"></p>
+<p>包括添加三条解析记录，192.30.252.153是GitHub的地址，你也可以ping你的 <a target="_blank" rel="noopener" href="http://xxxx.github.io/">http://xxxx.github.io</a> 的ip地址，填入进去。第三个记录类型是CNAME，CNAME的记录值是：你的用户名.<a target="_blank" rel="noopener" href="http://github.io/">http://github.io</a> 这里千万别弄错了。第二步，登录GitHub，进入之前创建的仓库，点击settings，设置Custom domain，输入你的域名<br><img src="https://pic4.zhimg.com/80/v2-85ba6dda906f22dea4c03df2b47d994b_720w.jpg"></p>
+<p>点击save保存。第三步，进入本地博客文件夹 ，进入blog/source目录下，创建一个记事本文件，输入你的域名，对，只要写进你自己的域名即可。如果带有www，那么以后访问的时候必须带有www完整的域名才可以访问，但如果不带有www，以后访问的时候带不带www都可以访问。所以建议，不要带有www。这里我还是写了www(不建议带有www):<br><img src="https://pic1.zhimg.com/80/v2-79abfff91af3f520e24cb91acf6aa994_720w.jpg"><br>保存，命名为CNAME ，注意保存成<strong>所有文件</strong>而<strong>不是txt文件</strong>。</p>
+<p>完成这三步，进入blog目录中，按住shift键右击打开命令行，依次输入：</p>
+<pre class="language-none"><code class="language-none">hexo clean
+hexo g
+hexo d</code></pre>
+
+<p>这时候打开浏览器在地址栏输入你的个性化域名将会直接进入你自己搭建的网站。</p>
+<h1 id="美化设置"><a href="#美化设置" class="headerlink" title="美化设置"></a>美化设置</h1><h2 id="站点基本设置"><a href="#站点基本设置" class="headerlink" title="站点基本设置"></a>站点基本设置</h2><p>在站点配置文件_config.yml修改基本的站点信息</p>
+<pre class="language-yml" data-language="yml"><code class="language-yml"># Site
+title: 写点东西😘
+subtitle: &#39;做自己喜欢做的事&#39;
+description: &#39;记自己需要记住的事&#39;
+keywords: gzling
+author: Mask
+language: zh-CN
+timezone: &#39;&#39;</code></pre>
+
+<p>依次是网站标题、副标题、网站描述、关键字、网站语言、时区等。</p>
+<p>在language的值修改为: zh-CN</p>
+<p>然后测试下就变中文。</p>
+<h2 id="NexT主题"><a href="#NexT主题" class="headerlink" title="NexT主题"></a>NexT主题</h2><h3 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h3><p>如果你不喜欢Hexo默认的主题，可以更换不同的主题，主题传送门：<a target="_blank" rel="noopener" href="https://hexo.io/themes/">Themes</a> 我自己使用的是Next主题，可以在hexo目录中的themes文件夹中查看你自己主题是什么。现在把默认主题更改成Next主题，在hexo目录中（就是命令行的位置处于hexo目录）打开命令行输入：</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> clone https://github.com/next-theme/hexo-theme-next themes/next</code></pre>
+
+<p>这是将Next主题下载到blog目录的themes主题下的next文件夹中。打开<strong>站点</strong>的_config.yml配置文件，修改主题为next</p>
+<p><img src="http://img.gzling.top/img/2022/01image-20220120103951429.png" alt="image-20220120103951429"></p>
+<p>打开<strong>主题</strong>的_config.yml配置文件，不是站点主题文件，找到Scheme Settings</p>
+<p><img src="https://gitee.com/gzl_admin/picture_bed/raw/master/img/2022/01/image-20220120104542966.png" alt="image-20220120104542966"></p>
+<p>next主题有四个样式，我用的是Mist，你们可以自己试试看，选择你自己喜欢的样式（只需要把行首的#去除，#是注释），选择好后，再次部署网站，hexo g、hexo d，查看效果。</p>
+<h3 id="菜单栏开启跳转页面"><a href="#菜单栏开启跳转页面" class="headerlink" title="菜单栏开启跳转页面"></a>菜单栏开启跳转页面</h3><p>还是在主题目录下的_config.yml中。把想要的页面开启，去掉#即可。</p>
+<pre class="language-yml" data-language="yml"><code class="language-yml">menu:
+  home: &#x2F; || fa fa-home
+  archives: &#x2F;archives&#x2F; || fa fa-archive
+  categories: &#x2F;categories&#x2F; || fa fa-th
+  tags: &#x2F;tags&#x2F; || fa fa-tags
+  about: &#x2F;about&#x2F; || fa fa-user
+  #schedule: &#x2F;schedule&#x2F; || fa fa-calendar
+  #sitemap: &#x2F;sitemap.xml || fa fa-sitemap
+  #commonweal: &#x2F;404&#x2F; || fa fa-heartbeat
+
+# Enable &#x2F; Disable menu icons &#x2F; item badges.
+menu_settings:
+  icons: true # 是否显示各个界面的图标
+  badges: false #是否显示分类&#x2F;标签&#x2F;归档页的内容量</code></pre>
+
+<p>我开启的从上到下分别是：首页、归档、分类、标签、关于我。<strong>可以在menu中调换显示顺序。</strong></p>
+<p>但是这些页面不会自动生成，得我们创建。</p>
+<p>比如：</p>
+<ul>
+<li><strong>分类页面</strong></li>
+</ul>
+<p>在站点目录打开Git Bash，输入</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash">hexo new page categories</code></pre>
+
+<p>然后去站点目录的source/categories的index.md 中，配置：copy过去即可。</p>
+<pre class="language-markdown" data-language="markdown"><code class="language-markdown"><span class="token front-matter-block"><span class="token punctuation">---</span>
+<span class="token front-matter yaml language-yaml">title: 分类
+type: "categories" # 这要跟主题目录下的_config.yml的那个名称一样
+comments: false # 不开启评论</span>
+<span class="token punctuation">---</span></span></code></pre>
+
+<ul>
+<li><strong>标签界面</strong></li>
+</ul>
+<pre class="language-bash" data-language="bash"><code class="language-bash">hexo new page tags</code></pre>
+
+<p>在source/tags的index.md 中</p>
+<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token punctuation">---</span>
+<span class="token key atrule">title</span><span class="token punctuation">:</span> 标签 <span class="token comment"># 默认是显示英文，需要自己改中文</span>
+<span class="token key atrule">type</span><span class="token punctuation">:</span> <span class="token string">"tags"</span>
+<span class="token key atrule">comments</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+<span class="token punctuation">---</span></code></pre>
+
+<ul>
+<li><strong>关于页面</strong></li>
+</ul>
+<pre class="language-none"><code class="language-none">hexo new page about</code></pre>
+
+<p>在source/about的index.md 中</p>
+<pre class="language-yml" data-language="yml"><code class="language-yml"><span class="token key atrule">title</span><span class="token punctuation">:</span> 关于
+<span class="token key atrule">date</span><span class="token punctuation">:</span> <span class="token datetime number">2019-11-30 22:52:16</span>
+<span class="token key atrule">type</span><span class="token punctuation">:</span> <span class="token string">"about"</span>
+
+<span class="token comment"># 然后下面就可以使用Markdown语法介绍自己</span></code></pre>
+
+<h3 id="添加博客图标"><a href="#添加博客图标" class="headerlink" title="添加博客图标"></a>添加博客图标</h3><p>在主题目录下_config.yml文件查询 favicon，只需要修改前两个：small和medium，图片的像素得为16像素和32像素</p>
+<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">favicon</span><span class="token punctuation">:</span>
+  <span class="token key atrule">small</span><span class="token punctuation">:</span> /images/favicon<span class="token punctuation">-</span>16x16<span class="token punctuation">-</span>next.png
+  <span class="token key atrule">medium</span><span class="token punctuation">:</span> /images/favicon<span class="token punctuation">-</span>32x32<span class="token punctuation">-</span>next.png
+  <span class="token key atrule">apple_touch_icon</span><span class="token punctuation">:</span> /images/apple<span class="token punctuation">-</span>touch<span class="token punctuation">-</span>icon<span class="token punctuation">-</span>next.png
+  <span class="token key atrule">safari_pinned_tab</span><span class="token punctuation">:</span> /images/logo.svg
+  <span class="token comment">#android_manifest: /images/manifest.json</span>
+  <span class="token comment">#ms_browserconfig: /images/browserconfig.xml</span></code></pre>
+
+<p>你可以看到这两个属性的值，/images其实完整的路径为：themes/next/source/images 这条路径来定位的。</p>
+<p>也可以定义外部URI。</p>
+<p>可以去图标素材：<a target="_blank" rel="noopener" href="https://www.iconfont.cn/">iconfont</a>中下载16x16和32x32大小的PNG格式图片，然后放到themes/next/source/images下。</p>
+<p>可以得出，要在主题某处添加什么图片都可以放在这个目录下。</p>
+<h3 id="鼠标点击特效"><a href="#鼠标点击特效" class="headerlink" title="鼠标点击特效"></a>鼠标点击特效</h3><p>鼠标的点击红心特效如下：</p>
+<p><img src="https://blogdata-1258545379.cos.ap-shanghai.myqcloud.com/20190124/5308475-78e64c0a80bb559e.gif"></p>
+<p>刚刚说了主题图片可以放在themes\next\source\images，而themes\next\source有一个js文件，我们在themes\next\source\js\src（如果没有就自己创建） 下新建文件clicklove.js，然后把下面的代码copy到该文件中。</p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token operator">!</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">e<span class="token punctuation">,</span>t<span class="token punctuation">,</span>a</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span><span class="token keyword">function</span> <span class="token function">n</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span><span class="token function">c</span><span class="token punctuation">(</span><span class="token string">".heart&#123;width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);&#125;.heart:after,.heart:before&#123;content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;&#125;.heart:after&#123;top: -5px;&#125;.heart:before&#123;left: -5px;&#125;"</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token function">o</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token function">r</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#125;</span><span class="token keyword">function</span> <span class="token function">r</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span><span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> e<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>e<span class="token operator">&lt;</span>d<span class="token punctuation">.</span>length<span class="token punctuation">;</span>e<span class="token operator">++</span><span class="token punctuation">)</span>d<span class="token punctuation">[</span>e<span class="token punctuation">]</span><span class="token punctuation">.</span>alpha<span class="token operator">&lt;=</span><span class="token number">0</span><span class="token operator">?</span><span class="token punctuation">(</span>t<span class="token punctuation">.</span>body<span class="token punctuation">.</span><span class="token function">removeChild</span><span class="token punctuation">(</span>d<span class="token punctuation">[</span>e<span class="token punctuation">]</span><span class="token punctuation">.</span>el<span class="token punctuation">)</span><span class="token punctuation">,</span>d<span class="token punctuation">.</span><span class="token function">splice</span><span class="token punctuation">(</span>e<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">:</span><span class="token punctuation">(</span>d<span class="token punctuation">[</span>e<span class="token punctuation">]</span><span class="token punctuation">.</span>y<span class="token operator">--</span><span class="token punctuation">,</span>d<span class="token punctuation">[</span>e<span class="token punctuation">]</span><span class="token punctuation">.</span>scale<span class="token operator">+=</span><span class="token number">.004</span><span class="token punctuation">,</span>d<span class="token punctuation">[</span>e<span class="token punctuation">]</span><span class="token punctuation">.</span>alpha<span class="token operator">-=</span><span class="token number">.013</span><span class="token punctuation">,</span>d<span class="token punctuation">[</span>e<span class="token punctuation">]</span><span class="token punctuation">.</span>el<span class="token punctuation">.</span>style<span class="token punctuation">.</span>cssText<span class="token operator">=</span><span class="token string">"left:"</span><span class="token operator">+</span>d<span class="token punctuation">[</span>e<span class="token punctuation">]</span><span class="token punctuation">.</span>x<span class="token operator">+</span><span class="token string">"px;top:"</span><span class="token operator">+</span>d<span class="token punctuation">[</span>e<span class="token punctuation">]</span><span class="token punctuation">.</span>y<span class="token operator">+</span><span class="token string">"px;opacity:"</span><span class="token operator">+</span>d<span class="token punctuation">[</span>e<span class="token punctuation">]</span><span class="token punctuation">.</span>alpha<span class="token operator">+</span><span class="token string">";transform:scale("</span><span class="token operator">+</span>d<span class="token punctuation">[</span>e<span class="token punctuation">]</span><span class="token punctuation">.</span>scale<span class="token operator">+</span><span class="token string">","</span><span class="token operator">+</span>d<span class="token punctuation">[</span>e<span class="token punctuation">]</span><span class="token punctuation">.</span>scale<span class="token operator">+</span><span class="token string">") rotate(45deg);background:"</span><span class="token operator">+</span>d<span class="token punctuation">[</span>e<span class="token punctuation">]</span><span class="token punctuation">.</span>color<span class="token operator">+</span><span class="token string">";z-index:99999"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token function">requestAnimationFrame</span><span class="token punctuation">(</span>r<span class="token punctuation">)</span><span class="token punctuation">&#125;</span><span class="token keyword">function</span> <span class="token function">o</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span><span class="token keyword">var</span> t<span class="token operator">=</span><span class="token string">"function"</span><span class="token operator">==</span><span class="token keyword">typeof</span> e<span class="token punctuation">.</span>onclick<span class="token operator">&amp;&amp;</span>e<span class="token punctuation">.</span>onclick<span class="token punctuation">;</span>e<span class="token punctuation">.</span><span class="token function-variable function">onclick</span><span class="token operator">=</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>t<span class="token operator">&amp;&amp;</span><span class="token function">t</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token function">i</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token keyword">function</span> <span class="token function">i</span><span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span><span class="token keyword">var</span> a<span class="token operator">=</span>t<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">"div"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>a<span class="token punctuation">.</span>className<span class="token operator">=</span><span class="token string">"heart"</span><span class="token punctuation">,</span>d<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span><span class="token literal-property property">el</span><span class="token operator">:</span>a<span class="token punctuation">,</span><span class="token literal-property property">x</span><span class="token operator">:</span>e<span class="token punctuation">.</span>clientX<span class="token operator">-</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token literal-property property">y</span><span class="token operator">:</span>e<span class="token punctuation">.</span>clientY<span class="token operator">-</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token literal-property property">scale</span><span class="token operator">:</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token literal-property property">alpha</span><span class="token operator">:</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token literal-property property">color</span><span class="token operator">:</span><span class="token function">s</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>t<span class="token punctuation">.</span>body<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">&#125;</span><span class="token keyword">function</span> <span class="token function">c</span><span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span><span class="token keyword">var</span> a<span class="token operator">=</span>t<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">"style"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>a<span class="token punctuation">.</span>type<span class="token operator">=</span><span class="token string">"text/css"</span><span class="token punctuation">;</span><span class="token keyword">try</span><span class="token punctuation">&#123;</span>a<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>t<span class="token punctuation">.</span><span class="token function">createTextNode</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#125;</span><span class="token keyword">catch</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>a<span class="token punctuation">.</span>styleSheet<span class="token punctuation">.</span>cssText<span class="token operator">=</span>e<span class="token punctuation">&#125;</span>t<span class="token punctuation">.</span><span class="token function">getElementsByTagName</span><span class="token punctuation">(</span><span class="token string">"head"</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">&#125;</span><span class="token keyword">function</span> <span class="token function">s</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span><span class="token keyword">return</span><span class="token string">"rgb("</span><span class="token operator">+</span><span class="token operator">~</span><span class="token operator">~</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token operator">*</span>Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">","</span><span class="token operator">+</span><span class="token operator">~</span><span class="token operator">~</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token operator">*</span>Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">","</span><span class="token operator">+</span><span class="token operator">~</span><span class="token operator">~</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token operator">*</span>Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">")"</span><span class="token punctuation">&#125;</span><span class="token keyword">var</span> d<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>e<span class="token punctuation">.</span><span class="token function-variable function">requestAnimationFrame</span><span class="token operator">=</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span><span class="token keyword">return</span> e<span class="token punctuation">.</span>requestAnimationFrame<span class="token operator">||</span>e<span class="token punctuation">.</span>webkitRequestAnimationFrame<span class="token operator">||</span>e<span class="token punctuation">.</span>mozRequestAnimationFrame<span class="token operator">||</span>e<span class="token punctuation">.</span>oRequestAnimationFrame<span class="token operator">||</span>e<span class="token punctuation">.</span>msRequestAnimationFrame<span class="token operator">||</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span><span class="token function">setTimeout</span><span class="token punctuation">(</span>e<span class="token punctuation">,</span><span class="token number">1e3</span><span class="token operator">/</span><span class="token number">60</span><span class="token punctuation">)</span><span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token function">n</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#125;</span><span class="token punctuation">(</span>window<span class="token punctuation">,</span>document<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+
+<p>然后在\themes\next\layout\_layout.njk文件末尾添加：</p>
+<pre class="language-html" data-language="html"><code class="language-html"><span class="token comment">&lt;!-- 页面点击小红心 --></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text/javascript<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/js/src/clicklove.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></code></pre>
+
+<h3 id="设置头像"><a href="#设置头像" class="headerlink" title="设置头像"></a>设置头像</h3><p>在主题目录（themes/next/）中的_config.yml，查找 avatar</p>
+<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token comment"># Sidebar Avatar</span>
+<span class="token key atrule">avatar</span><span class="token punctuation">:</span>
+  <span class="token comment"># Replace the default image and set the url here.</span>
+  <span class="token comment"># 把你要的头像文件名字改为avatar并放到相应路径下，如果后缀不同，则在这里改后缀，不要改图片后缀</span>
+  <span class="token key atrule">url</span><span class="token punctuation">:</span> /images/avatar.jpg 
+  <span class="token comment"># If true, the avatar will be dispalyed in circle.</span>
+  <span class="token key atrule">rounded</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token comment"># If true, the avatar will be rotated with the cursor.</span>
+  <span class="token key atrule">rotated</span><span class="token punctuation">:</span> <span class="token boolean important">true</span></code></pre>
+
+<h3 id="侧边栏社交小图标设置"><a href="#侧边栏社交小图标设置" class="headerlink" title="侧边栏社交小图标设置"></a>侧边栏社交小图标设置</h3><p>在主题目录打开_config.yml，查询 social</p>
+<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">social</span><span class="token punctuation">:</span>
+  <span class="token key atrule">GitHub</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//github.com/magicflung <span class="token punctuation">|</span><span class="token punctuation">|</span> github
+  <span class="token comment">#E-Mail: mailto:yourname@gmail.com || envelope</span>
+  <span class="token comment">#Weibo: https://weibo.com/yourname || weibo</span>
+  <span class="token comment">#Google: https://plus.google.com/yourname || google</span>
+  <span class="token comment">#Twitter: https://twitter.com/yourname || twitter</span>
+  <span class="token comment">#FB Page: https://www.facebook.com/yourname || facebook</span>
+  <span class="token comment">#StackOverflow: https://stackoverflow.com/yourname || stack-overflow</span>
+  <span class="token comment">#YouTube: https://youtube.com/yourname || youtube</span>
+  <span class="token comment">#Instagram: https://instagram.com/yourname || instagram</span>
+  <span class="token comment">#Skype: skype:yourname?call|chat || skype</span>
+  <span class="token comment">#RSS: /atom.xml || rss</span></code></pre>
+
+<p>效果：<img src="https://gitee.com/gzl_admin/picture_bed/raw/master/img/2022/01/20220120150527.png"></p>
+<h3 id="文章末尾的标签图标修改"><a href="#文章末尾的标签图标修改" class="headerlink" title="文章末尾的标签图标修改"></a>文章末尾的标签图标修改</h3><p>默认是 带“#”，可以把它换成图标。还是主题目录打开_config.yml中查询 tag_icon</p>
+<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token comment"># Use icon instead of the symbol # to indicate the tag at the bottom of the post</span>
+<span class="token key atrule">tag_icon</span><span class="token punctuation">:</span> <span class="token boolean important">true</span></code></pre>
+
+<p>效果：<img src="https://imgconvert.csdnimg.cn/aHR0cDovL2ZsdW5nZ2cub3NzLWNuLXNoZW56aGVuLmFsaXl1bmNzLmNvbS9oZXhvSW1nLzIwMTkxMjI2MjMvMjAxOTEyMjYyMzE3MjctMTU5OTYwLnBuZw?x-oss-process=image/format,png"></p>
+<h3 id="访问量统计"><a href="#访问量统计" class="headerlink" title="访问量统计"></a>访问量统计</h3><p>在主题目录打开_config.yml，查询 busuanzi</p>
+<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token comment"># Show Views / Visitors of the website / page with busuanzi.</span>
+<span class="token comment"># Get more information on http://ibruce.info/2015/04/04/busuanzi</span>
+<span class="token key atrule">busuanzi_count</span><span class="token punctuation">:</span>
+  <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span> <span class="token comment"># 是否开启访问量统计</span>
+  <span class="token key atrule">total_visitors</span><span class="token punctuation">:</span> <span class="token boolean important">false</span> <span class="token comment"># 本站访客数</span>
+  <span class="token key atrule">total_visitors_icon</span><span class="token punctuation">:</span> user
+  <span class="token key atrule">total_views</span><span class="token punctuation">:</span> <span class="token boolean important">true</span> <span class="token comment"># 本站总访问量</span>
+  <span class="token key atrule">total_views_icon</span><span class="token punctuation">:</span> eye
+  <span class="token key atrule">post_views</span><span class="token punctuation">:</span> <span class="token boolean important">false</span> <span class="token comment"># 文章访问量，但我不喜欢用这个，因为在我的网站首页不会显示每篇博文的访问量，而是得点进博文，我用别的来统计，待会会说</span></code></pre>
+
+<blockquote>
+<p>post_views: 我使用了leancloud，需要在leancloud注册账户+认证，具体操作可以看另外一篇文档<a href=":/49f54271c69d44819facf071b1975b22">Hexo + Next 添加文章阅读量统计</a></p>
+</blockquote>
+<h3 id="启动阅读更多按钮"><a href="#启动阅读更多按钮" class="headerlink" title="启动阅读更多按钮"></a>启动阅读更多按钮</h3><p>在主题目录的_config.yml中，查询：read_more_btn</p>
+<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token comment"># Read more button</span>
+<span class="token comment"># If true, the read more button will be displayed in excerpt section.</span>
+<span class="token key atrule">read_more_btn</span><span class="token punctuation">:</span> <span class="token boolean important">true</span> <span class="token comment"># 启动</span></code></pre>
+
+<p>效果：<img src="https://gitee.com/gzl_admin/picture_bed/raw/master/img/2022/01/20220121005535.png"></p>
+<ul>
+<li><strong>第一种方式</strong></li>
+</ul>
+<p>这里需要额外说一下，必须在每篇博文的最前面有一堆默认键值对代码那里，添加上一个键: description，</p>
+<p>然后冒号： :，然后再空格，添加上自己的小文段。<img src="https://gitee.com/gzl_admin/picture_bed/raw/master/img/2022/01/20220121005643.png"></p>
+<ul>
+<li><strong>第二种方式</strong></li>
+</ul>
+<p>在文章中使用<code>&lt; !--more--&gt;</code> 手动进行截断<br>这种方法可以根据文章的内容，自己在合适的位置添加 <code>&lt; !--more--&gt;</code> 标签，使用灵活，也是Hexo推荐的方法。</p>
+<p>但是这种有个问题，点击阅读全文会自动定位到 more的位置，而不是文章的开头</p>
+<p>新版本解决方案：强制修改\themes\next\layout_macro\post.njk 中</p>
+<pre class="language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;&#123; url_for(post.path) &#125;&#125;#more<span class="token punctuation">"</span></span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>contents<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>···<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span></code></pre>
+
+<p>修改为 去除#more 锚点即可</p>
+<pre class="language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;&#123; url_for(post.path) &#125;&#125;<span class="token punctuation">"</span></span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>contents<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>···<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span></code></pre>
+
+<h3 id="博文模板设置"><a href="#博文模板设置" class="headerlink" title="博文模板设置"></a>博文模板设置</h3><p>但是每次都得自己加太麻烦了，所以在站点目录下的scaffolds文件中有个post文件，这个文件就是博文模板，点开就可以添加每篇博文的通用信息。我的如下：</p>
+<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token punctuation">---</span>
+<span class="token key atrule">title</span><span class="token punctuation">:</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span> title <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span>
+<span class="token key atrule">date</span><span class="token punctuation">:</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span> date <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span>
+<span class="token key atrule">tags</span><span class="token punctuation">:</span>
+<span class="token key atrule">categories</span><span class="token punctuation">:</span>
+<span class="token key atrule">copyright</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+<span class="token key atrule">top</span><span class="token punctuation">:</span>
+<span class="token key atrule">description</span><span class="token punctuation">:</span>
+<span class="token punctuation">---</span></code></pre>
+
+<p>categories: 如果有多个分类平级请使用</p>
+<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">categories</span><span class="token punctuation">:</span> 
+<span class="token punctuation">-</span> <span class="token punctuation">[</span>面试<span class="token punctuation">]</span> 
+<span class="token punctuation">-</span> <span class="token punctuation">[</span>Java<span class="token punctuation">]</span></code></pre>
+
+<p>效果：<img src="https://gitee.com/gzl_admin/picture_bed/raw/master/img/2022/01/20220121010103.png"></p>
+<p>如果写成</p>
+<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">categories</span><span class="token punctuation">:</span> 
+<span class="token punctuation">-</span> 面试 
+<span class="token punctuation">-</span> Java</code></pre>
+
+<p>这会标识Java是面试下面的子类</p>
+<p>效果：<img src="https://gitee.com/gzl_admin/picture_bed/raw/master/img/2022/01/20220121010049.png"></p>
+<p>多个平级分类 + 子集分类</p>
+<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">categories</span><span class="token punctuation">:</span> 
+<span class="token punctuation">-</span> <span class="token punctuation">[</span>面试<span class="token punctuation">,</span>Java<span class="token punctuation">]</span> 
+<span class="token punctuation">-</span> <span class="token punctuation">[</span>Java<span class="token punctuation">]</span></code></pre>
+
+<p>效果：<img src="https://gitee.com/gzl_admin/picture_bed/raw/master/img/2022/01/20220121010305.png"></p>
+<h3 id="文章顶置"><a href="#文章顶置" class="headerlink" title="文章顶置"></a>文章顶置</h3><p>在站点目录下打开Git Bash，先把原先的顶置插件卸载了，然后再装上hexo-generator-index-pin-top，输入：</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> uninstall hexo-generator-index --save
+<span class="token function">npm</span> <span class="token function">install</span> hexo-generator-index-pin-top --save</code></pre>
+
+<p><strong>然后可以在博文模板post中加个top键，值为整数，并且值为大越靠前。</strong></p>
+<p>最后，就是在顶置博文时，没用一个顶置图标感觉有点怪怪的，所以可以加个图标。在主题目录中的themes\next\layout_partials\post的post-meta.njk文件，打开查询第一个：<code>&lt;div class=&quot;post-meta&quot;&gt;</code>。</p>
+<p>然后这个div的下一行添加上：</p>
+<pre class="language-none"><code class="language-none">&#123;% if post.top %&#125;
+    &lt;font color&#x3D;&quot;red&quot;&gt;&lt;i class&#x3D;&quot;fa fa-arrow-up&quot;&gt;&lt;&#x2F;i&gt;
+    &lt;strong&gt;置顶&lt;&#x2F;strong&gt;&lt;&#x2F;font&gt;
+&#123;% endif %&#125;</code></pre>
+
+<p>效果：<img src="C:\Users\30600\AppData\Roaming\Typora\typora-user-images\image-20220121014456168.png" alt="image-20220121014456168"></p>
+<h3 id="在文章底部增加版权信息"><a href="#在文章底部增加版权信息" class="headerlink" title="在文章底部增加版权信息"></a>在文章底部增加版权信息</h3><p>在主题目录的_config.yml查询 creative_commons</p>
+<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token comment"># Creative Commons 4.0 International License.</span>
+<span class="token comment"># See: https://creativecommons.org/share-your-work/licensing-types-examples</span>
+<span class="token comment"># Available values of license: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | zero</span>
+<span class="token comment"># You can set a language value if you prefer a translated version of CC license, e.g. deed.zh</span>
+<span class="token comment"># CC licenses are available in 39 languages, you can find the specific and correct abbreviation you need on https://creativecommons.org</span>
+<span class="token key atrule">creative_commons</span><span class="token punctuation">:</span>
+  <span class="token key atrule">license</span><span class="token punctuation">:</span> by<span class="token punctuation">-</span>nc<span class="token punctuation">-</span>sa
+  <span class="token key atrule">sidebar</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+  <span class="token key atrule">post</span><span class="token punctuation">:</span> <span class="token boolean important">true</span> <span class="token comment"># 开启</span>
+  language<span class="token punctuation">:</span></code></pre>
+
+<p>效果：<img src="https://gitee.com/gzl_admin/picture_bed/raw/master/img/2022/01/20220121025013.png"></p>
+<p>还可以在这基础上添加自己想展示的信息，步骤如下：</p>
+<ol>
+<li>打开 themes\next\layout_partials\post目录下的 post-copyright.njk 文件</li>
+<li>根据里面的格式进行添加修改信息，下图为我新增的发布日期信息</li>
+</ol>
+<p><img src="https://gitee.com/gzl_admin/picture_bed/raw/master/img/2022/01/image-20220121025251352.png" alt="image-20220121025251352"></p>
+<p>效果：<img src="https://gitee.com/gzl_admin/picture_bed/raw/master/img/2022/01/20220121025317.png"></p>
+<h3 id="添加打赏"><a href="#添加打赏" class="headerlink" title="添加打赏"></a>添加打赏</h3><p>在主题文件的_config.yml，查询：reward</p>
+<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token comment"># Reward (Donate)</span>
+<span class="token comment"># Front-matter variable (unsupport animation).</span>
+<span class="token key atrule">reward_settings</span><span class="token punctuation">:</span>
+  <span class="token comment"># If true, reward will be displayed in every article by default.</span>
+  <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span> <span class="token comment"># 开启打赏</span>
+  <span class="token key atrule">animation</span><span class="token punctuation">:</span> <span class="token boolean important">false</span> <span class="token comment"># 开启动画抖动，建议关闭，晃得眼晕</span>
+  <span class="token comment">#comment: Donate comment here.</span>
+
+<span class="token key atrule">reward</span><span class="token punctuation">:</span>
+  <span class="token key atrule">wechatpay</span><span class="token punctuation">:</span> /images/wechatpay.jpg <span class="token comment"># 放微信的收款码</span>
+  <span class="token key atrule">alipay</span><span class="token punctuation">:</span> /images/alipay.jpg <span class="token comment"># 放支付宝的收款码</span>
+  <span class="token comment">#bitcoin: /images/bitcoin.png</span></code></pre>
+
+<h3 id="代码块美化（引擎、行号、复制按钮）"><a href="#代码块美化（引擎、行号、复制按钮）" class="headerlink" title="代码块美化（引擎、行号、复制按钮）"></a>代码块美化（引擎、行号、复制按钮）</h3><p>next 8.x 支持2中引擎，highlight、prismjs两种引擎，可以自行切换，切换记得重新 clean 发布</p>
+<p>修改引擎在<code>站点_config.yml</code> 搜索 highlight 或者 prismjs</p>
+<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">highlight</span><span class="token punctuation">:</span>
+  <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">false</span> <span class="token comment">#是否开启代码高亮</span>
+  <span class="token key atrule">line_number</span><span class="token punctuation">:</span> <span class="token boolean important">true</span> <span class="token comment">#是否增加代码行号</span>
+  <span class="token key atrule">auto_detect</span><span class="token punctuation">:</span> <span class="token boolean important">true</span> <span class="token comment">#自动判断代码语言</span>
+  <span class="token key atrule">tab_replace</span><span class="token punctuation">:</span>
+
+<span class="token key atrule">prismjs</span><span class="token punctuation">:</span>
+  <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span> <span class="token comment">#是否开启代码高亮</span>
+  <span class="token key atrule">preprocess</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">line_number</span><span class="token punctuation">:</span> <span class="token boolean important">false</span> <span class="token comment">#是否增加代码行号</span>
+  <span class="token key atrule">tab_replace</span><span class="token punctuation">:</span> <span class="token string">''</span></code></pre>
+
+<p>修改代码块高亮样式在 next的_config.yml 中，搜索 codeblock</p>
+<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">codeblock</span><span class="token punctuation">:</span>
+  <span class="token comment"># Code Highlight theme</span>
+  <span class="token comment"># All available themes: https://theme-next.js.org/highlight/</span>
+  <span class="token key atrule">theme</span><span class="token punctuation">:</span>
+    <span class="token key atrule">light</span><span class="token punctuation">:</span> atom<span class="token punctuation">-</span>one<span class="token punctuation">-</span>light	<span class="token comment"># 模板</span>
+    <span class="token key atrule">dark</span><span class="token punctuation">:</span> tomorrow<span class="token punctuation">-</span>night	<span class="token comment">#</span>
+  <span class="token key atrule">prism</span><span class="token punctuation">:</span>
+    <span class="token key atrule">light</span><span class="token punctuation">:</span> prism	<span class="token comment">#</span>
+    <span class="token key atrule">dark</span><span class="token punctuation">:</span> prism<span class="token punctuation">-</span>tomorrow	<span class="token comment">#</span>
+  <span class="token comment"># Add copy button on codeblock</span>
+  <span class="token key atrule">copy_button</span><span class="token punctuation">:</span>
+    <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token comment"># Available values: default | flat | mac</span>
+    <span class="token key atrule">style</span><span class="token punctuation">:</span> default</code></pre>
+
+<h3 id="在Footer添加站点运行时间"><a href="#在Footer添加站点运行时间" class="headerlink" title="在Footer添加站点运行时间"></a>在Footer添加站点运行时间</h3><p>在主题目录的/themes/next/layout/_partials/footer.njk 最后添加下面代码</p>
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">"days"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
+<span class="token operator">&lt;</span>script language<span class="token operator">=</span><span class="token string">"javascript"</span><span class="token operator">></span>
+    <span class="token keyword">function</span> <span class="token function">show_date_time</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    window<span class="token punctuation">.</span><span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token string">"show_date_time()"</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    BirthDay<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token string">"11/29/2019 20:00:00"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    today<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    timeold<span class="token operator">=</span><span class="token punctuation">(</span>today<span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span>BirthDay<span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    sectimeold<span class="token operator">=</span>timeold<span class="token operator">/</span><span class="token number">1000</span>
+    secondsold<span class="token operator">=</span>Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>sectimeold<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    msPerDay<span class="token operator">=</span><span class="token number">24</span><span class="token operator">*</span><span class="token number">60</span><span class="token operator">*</span><span class="token number">60</span><span class="token operator">*</span><span class="token number">1000</span>
+    e_daysold<span class="token operator">=</span>timeold<span class="token operator">/</span>msPerDay
+    daysold<span class="token operator">=</span>Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>e_daysold<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    e_hrsold<span class="token operator">=</span><span class="token punctuation">(</span>e_daysold<span class="token operator">-</span>daysold<span class="token punctuation">)</span><span class="token operator">*</span><span class="token number">24</span><span class="token punctuation">;</span>
+    hrsold<span class="token operator">=</span><span class="token function">setzero</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>e_hrsold<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    e_minsold<span class="token operator">=</span><span class="token punctuation">(</span>e_hrsold<span class="token operator">-</span>hrsold<span class="token punctuation">)</span><span class="token operator">*</span><span class="token number">60</span><span class="token punctuation">;</span>
+    minsold<span class="token operator">=</span><span class="token function">setzero</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span><span class="token punctuation">(</span>e_hrsold<span class="token operator">-</span>hrsold<span class="token punctuation">)</span><span class="token operator">*</span><span class="token number">60</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    seconds<span class="token operator">=</span><span class="token function">setzero</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span><span class="token punctuation">(</span>e_minsold<span class="token operator">-</span>minsold<span class="token punctuation">)</span><span class="token operator">*</span><span class="token number">60</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'days'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>innerHTML<span class="token operator">=</span><span class="token string">"已运行"</span><span class="token operator">+</span>daysold<span class="token operator">+</span><span class="token string">"天"</span><span class="token operator">+</span>hrsold<span class="token operator">+</span><span class="token string">"时"</span><span class="token operator">+</span>minsold<span class="token operator">+</span><span class="token string">"分"</span><span class="token operator">+</span>seconds<span class="token operator">+</span><span class="token string">"秒"</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">function</span> <span class="token function">setzero</span><span class="token punctuation">(</span><span class="token parameter">i</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>i<span class="token operator">&lt;</span><span class="token number">10</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#123;</span>i<span class="token operator">=</span><span class="token string">"0"</span> <span class="token operator">+</span> i<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> i<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token function">show_date_time</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span></code></pre>
+
+<h3 id="实现文章统计功能"><a href="#实现文章统计功能" class="headerlink" title="实现文章统计功能"></a>实现文章统计功能</h3><p>安装一个 hexo-symbols-count-time插件，可以统计字数和阅读分钟数，</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> hexo-symbols-count-time --save</code></pre>
+
+<p>然后在站点目录的config.yml最后添加：</p>
+<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">symbols_count_time</span><span class="token punctuation">:</span>
+  <span class="token key atrule">symbols</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>                <span class="token comment"># 文章字数统计</span>
+  <span class="token key atrule">time</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>                   <span class="token comment"># 文章阅读时长</span>
+  <span class="token key atrule">total_symbols</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>          <span class="token comment"># 站点总字数统计</span>
+  <span class="token key atrule">total_time</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>             <span class="token comment"># 站点总阅读时长</span>
+  <span class="token key atrule">exclude_codeblock</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>     <span class="token comment"># 排除代码字数统计</span></code></pre>
+
+<p>不喜欢的可以使用false让它不启动。并且文章字数统计时，他是连空格，标点符号等都统计了，可能会导致文章的字数会不正确，偏大。</p>
+<p>效果：<img src="https://gitee.com/gzl_admin/picture_bed/raw/master/img/2022/01/20220121112857.png"></p>
+<h3 id="RSS订阅"><a href="#RSS订阅" class="headerlink" title="RSS订阅"></a>RSS订阅</h3><p>首先在站点目录下打开Git Bash 安装</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> hexo-generator-feed --save</code></pre>
+
+<p>然后打开站点目录的_config.yml在后面添加：</p>
+<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token comment"># RSS</span>
+<span class="token key atrule">plugins</span><span class="token punctuation">:</span> hexo<span class="token punctuation">-</span>generate<span class="token punctuation">-</span>feed</code></pre>
+
+<p>然后在主题next目录的_config.yml 查找 RSS</p>
+<p>然后把它的注释去掉，即开启，并且不用去创建该页面，会自动生成</p>
+<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">RSS</span><span class="token punctuation">:</span> /atom.xml <span class="token punctuation">|</span><span class="token punctuation">|</span> fa fa<span class="token punctuation">-</span>rss</code></pre>
+
+<h3 id="网站右上角GitHub的跳转按钮"><a href="#网站右上角GitHub的跳转按钮" class="headerlink" title="网站右上角GitHub的跳转按钮"></a>网站右上角GitHub的跳转按钮</h3><p>在主题目录的_config.yml查询 github_banner</p>
+<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token comment"># `Follow me on GitHub` banner in the top-right corner.</span>
+<span class="token key atrule">github_banner</span><span class="token punctuation">:</span>
+  <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span> <span class="token comment"># 开启</span>
+  <span class="token key atrule">permalink</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//github.com/magicflung <span class="token comment"># 把它改为你的github首页</span>
+  <span class="token key atrule">title</span><span class="token punctuation">:</span> Follow me on GitHub</code></pre>
+
+<h3 id="自动保存上次阅读进度"><a href="#自动保存上次阅读进度" class="headerlink" title="自动保存上次阅读进度"></a>自动保存上次阅读进度</h3><p>Bookmark是一个插件，允许用户保存他们的阅读进度。用户只需单击页面左上角的书签图标即可保存滚动位置。当他们下次访问您的博客时，他们可以自动恢复每个页面的最后滚动位置。</p>
+<p>在主题目录的_config.yml查询 bookmark</p>
+<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">bookmark</span><span class="token punctuation">:</span>
+  <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span> <span class="token comment"># 开启</span>
+  <span class="token comment"># Customize the color of the bookmark.</span>
+  <span class="token key atrule">color</span><span class="token punctuation">:</span> <span class="token string">"#836FFF"</span> <span class="token comment"># 自定义颜色</span>
+  <span class="token comment"># If auto, save the reading progress when closing the page or clicking the bookmark-icon.</span>
+  <span class="token comment"># If manual, only save it by clicking the bookmark-icon.</span>
+  <span class="token key atrule">save</span><span class="token punctuation">:</span> auto <span class="token comment"># 会自动保存阅读进度</span></code></pre>
+
+<h3 id="显示当前浏览进度"><a href="#显示当前浏览进度" class="headerlink" title="显示当前浏览进度"></a>显示当前浏览进度</h3><h4 id="方式一"><a href="#方式一" class="headerlink" title="方式一"></a>方式一</h4><p>在主题目录的_config.yml查询scrollpercent，默认为false，改为true</p>
+<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">back2top</span><span class="token punctuation">:</span>
+  <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token comment"># Back to top in sidebar.</span>
+  <span class="token key atrule">sidebar</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+  <span class="token comment"># Scroll percent label in b2t button.</span>
+  <span class="token key atrule">scrollpercent</span><span class="token punctuation">:</span> <span class="token boolean important">true</span> <span class="token comment"># 开启</span></code></pre>
+
+<p>效果：<img src="https://gitee.com/gzl_admin/picture_bed/raw/master/img/2022/01/20220121115126.png"></p>
+<h4 id="方式二"><a href="#方式二" class="headerlink" title="方式二"></a>方式二</h4><p>在主题目录的_config.yml查询reading_progress</p>
+<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token comment"># Reading progress bar</span>
+<span class="token key atrule">reading_progress</span><span class="token punctuation">:</span>
+  <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span> <span class="token comment"># 开启</span>
+  <span class="token comment"># Available values: top | bottom</span>
+  <span class="token key atrule">position</span><span class="token punctuation">:</span> top <span class="token comment"># top会出现在页面最顶部，bottom会出现在那里</span>
+  <span class="token key atrule">color</span><span class="token punctuation">:</span> <span class="token string">"#836FFF"</span> <span class="token comment"># 可修改颜色</span>
+  <span class="token key atrule">height</span><span class="token punctuation">:</span> 3px</code></pre>
+
+
+
+<p>效果：<img src="https://gitee.com/gzl_admin/picture_bed/raw/master/img/2022/01/20220121115339.png"></p>
+<h3 id="Footer-页脚设置"><a href="#Footer-页脚设置" class="headerlink" title="Footer / 页脚设置"></a>Footer / 页脚设置</h3><p>在主题目录的_config.yml 查询 footer</p>
+<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">footer</span><span class="token punctuation">:</span>
+  <span class="token comment"># Specify the date when the site was setup. If not defined, current year will be used.</span>
+  <span class="token comment">#since: 2019 #建站时间</span>
+
+  <span class="token comment"># Icon between year and copyright info.</span>
+  <span class="token key atrule">icon</span><span class="token punctuation">:</span>
+    <span class="token comment"># Icon name in Font Awesome. See: https://fontawesome.com/v4.7.0/icons/</span>
+    <span class="token comment"># `heart` is recommended with animation in red (#ff0000).</span>
+    <span class="token key atrule">name</span><span class="token punctuation">:</span> heart <span class="token comment"># 可以修改图片，可以去 https://fontawesome.com/v4.7.0/icons/ 找</span>
+    <span class="token comment"># If you want to animate the icon, set it to true.</span>
+    <span class="token key atrule">animated</span><span class="token punctuation">:</span> <span class="token boolean important">true</span> <span class="token comment">#图标是否闪动</span>
+    <span class="token comment"># Change the color of icon, using Hex Code.</span>
+    <span class="token key atrule">color</span><span class="token punctuation">:</span> <span class="token string">"#F5F5F5"</span> <span class="token comment"># 图标颜色</span>
+
+  <span class="token comment"># If not defined, `author` from Hexo `_config.yml` will be used.</span>
+  <span class="token key atrule">copyright</span><span class="token punctuation">:</span>
+  
+  <span class="token comment"># Powered by Hexo 字样，不喜欢可以设置为 false</span>
+  <span class="token key atrule">powered</span><span class="token punctuation">:</span>
+    <span class="token comment"># Hexo link (Powered by Hexo).</span>
+    <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token comment"># Version info of Hexo after Hexo link (vX.X.X).</span>
+    <span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    
+  <span class="token comment"># 主题字样，不喜欢可以 false</span>
+  <span class="token key atrule">theme</span><span class="token punctuation">:</span>
+    <span class="token comment"># Theme &amp; scheme info link (Theme - NexT.scheme).</span>
+    <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token comment"># Version info of NexT after scheme info (vX.X.X).</span>
+    <span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+
+  <span class="token comment"># 备案信息，如果网站有备案号，可以在这里填写备案号</span>
+  <span class="token comment"># Beian ICP and gongan information for Chinese users. See: http://www.beian.miit.gov.cn, http://www.beian.gov.cn</span>
+  <span class="token key atrule">beian</span><span class="token punctuation">:</span>
+    <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">false</span> <span class="token comment">#是否显示网站备案信息</span>
+    <span class="token key atrule">icp</span><span class="token punctuation">:</span>
+    <span class="token comment"># The digit in the num of gongan beian.</span>
+    <span class="token key atrule">gongan_id</span><span class="token punctuation">:</span>
+    <span class="token comment"># The full num of gongan beian.</span>
+    <span class="token key atrule">gongan_num</span><span class="token punctuation">:</span>
+    <span class="token comment"># The icon for gongan beian. See: http://www.beian.gov.cn/portal/download</span>
+    gongan_icon_url<span class="token punctuation">:</span></code></pre>
+
+<h3 id="添加评论"><a href="#添加评论" class="headerlink" title="添加评论"></a>添加评论</h3><p>这里用的是来必力评论的功能，个人觉得这个还是很好用的，界面挺好看的，支持多方登录评论。</p>
+<ol>
+<li>首先你要注册一个来必力账号，<a target="_blank" rel="noopener" href="https://www.livere.com/">https://www.livere.com</a></li>
+<li>注册完，登录，点击安装，选择City版免费的那个，点击现在安装，填入相关信息拿到安装代码，这里我们只需要安装代码里面的UID</li>
+</ol>
+<p><img src="https://gitee.com/gzl_admin/picture_bed/raw/master/img/2022/01/20220121173643.png"></p>
+<p><img src="https://gitee.com/gzl_admin/picture_bed/raw/master/img/2022/01/20220121173700.png"></p>
+<ol start="3">
+<li><p>拿到uid后，打开主题配置文件_config.yml，搜索<strong>livere_uid</strong>，把uid填进去就可以，接着重新部署hexo g 、hexo s就完成添加评论的功能了。</p>
+<p><img src="https://gitee.com/gzl_admin/picture_bed/raw/master/img/2022/01/20220121173735.png"></p>
+</li>
+<li><p>效果：<img src="https://gitee.com/gzl_admin/picture_bed/raw/master/img/2022/01/20220121174354.png"></p>
+</li>
+<li><p>来必力后台管理：<img src="https://gitee.com/gzl_admin/picture_bed/raw/master/img/2022/01/20220121174445.png"></p>
+</li>
+</ol>
+<h3 id="Url-持久化"><a href="#Url-持久化" class="headerlink" title="Url 持久化"></a>Url 持久化</h3><p>我们可以发现 hexo 默认生成的文章地址路径是 【网站名称／年／月／日／文章名称】。</p>
+<p>这种链接对搜索爬虫是很不友好的，它的 url 结构超过了三层，太深了。</p>
+<p>下面我推荐安装 hexo-abbrlink 插件：</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> hexo-abbrlink --save</code></pre>
+
+<p>然后在站点目录下，查询 permalink</p>
+<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token comment"># URL</span>
+<span class="token comment">## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'</span>
+<span class="token key atrule">url</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//gzling.top/  <span class="token comment"># 这里我填写我自己的域名，没有域名的先别动</span>
+<span class="token key atrule">permalink</span><span class="token punctuation">:</span> archives/<span class="token punctuation">:</span>abbrlink.html
+<span class="token key atrule">permalink_defaults</span><span class="token punctuation">:</span>
+<span class="token key atrule">pretty_urls</span><span class="token punctuation">:</span>
+  <span class="token key atrule">trailing_index</span><span class="token punctuation">:</span> <span class="token boolean important">true</span> <span class="token comment"># Set to false to remove trailing 'index.html' from permalinks</span>
+  <span class="token key atrule">trailing_html</span><span class="token punctuation">:</span> <span class="token boolean important">true</span> <span class="token comment"># Set to false to remove trailing '.html' from permalinks</span></code></pre>
+
+<h3 id="背景添加动态线条效果"><a href="#背景添加动态线条效果" class="headerlink" title="背景添加动态线条效果"></a>背景添加动态线条效果</h3><p>在 \themes\next\layout\_layout.njk 文件中添加如下代码：</p>
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span>动态线条背景<span class="token operator">--</span><span class="token operator">></span>
+<span class="token operator">&lt;</span>script type<span class="token operator">=</span><span class="token string">"text/javascript"</span>
+color<span class="token operator">=</span><span class="token string">"220,220,220"</span> opacity<span class="token operator">=</span><span class="token string">'0.7'</span> zIndex<span class="token operator">=</span><span class="token string">"-2"</span> count<span class="token operator">=</span><span class="token string">"200"</span> src<span class="token operator">=</span><span class="token string">"//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"</span><span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span></code></pre>
+
+<p>其中：</p>
+<ul>
+<li>color：表示线条颜色，三个数字分别为(R,G,B)，默认：（0,0,0）</li>
+<li>opacity：表示线条透明度（0~1），默认：0.5</li>
+<li>count：表示线条的总数量，默认：150</li>
+<li>zIndex：表示背景的z-index属性，css属性用于控制所在层的位置，默认：-1</li>
+</ul>
+<h3 id="SEO支持"><a href="#SEO支持" class="headerlink" title="SEO支持"></a>SEO支持</h3><p>SEO(Search Engine Optimization)意为搜索引擎优化,利用搜索引擎的规则提高网站在有关搜索引擎内的自然排名。</p>
+<p>百度SEO 站点管理平台</p>
+<p>登录<a target="_blank" rel="noopener" href="https://ziyuan.baidu.com/linksubmit/index">百度站点管理平台</a>添加站点域名，然后验证站点。</p>
+<p>验证站点有几种方式，包括下载文件验证，HTML，CNAME验证等，我做了HTML验证：</p>
+<p>复制content后的内容，将复制的内容粘贴到next文件下_config.yml的baidu_site_verification字段</p>
+<p><img src="https://gitee.com/gzl_admin/picture_bed/raw/master/img/2022/01/20220122123234.png"></p>
+<p><img src="https://gitee.com/gzl_admin/picture_bed/raw/master/img/2022/01/20220122123413.png"></p>
+<h4 id="博客内容推送"><a href="#博客内容推送" class="headerlink" title="博客内容推送"></a>博客内容推送</h4><p>由于Github对百度爬虫进行了屏蔽，因此百度是爬取不到Github上的页面的，如果你把网站也部署到了Coding上，那百度就可以抓取到。所以看下面的内容之前，需要确保网站部署到了coding。</p>
+<p>在站点管理平台可以选择博客内容推送方式，自动和手动。自动推送有三种，我同时做了sitemap和主动推送(实时)两种方式。</p>
+<ol>
+<li>Sitemap推送方式</li>
+</ol>
+<blockquote>
+<p>站点地图即sitemap，是一个页面，上面放置了网站上需要搜索引擎抓取的所有页面的链接。站点地图可以告诉搜索引擎网站上有哪些可供抓取的网页，以便搜索引擎可以更加智能地抓取网站。</p>
+</blockquote>
+<p>安装百度站点地图生成插件：</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> hexo-generator-baidu-sitemap --save</code></pre>
+
+<p>在博客根目录config文件添加配置：</p>
+<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">baidusitemap</span><span class="token punctuation">:</span>
+  <span class="token key atrule">path</span><span class="token punctuation">:</span> baidusitemap.xml</code></pre>
+
+<p>然后执行hexo g -d，public目录里就会生成baidusitemap.xml文件，这就是生成的站点地图。里面包含了网站上所有页面的链接，搜索引擎通过这个文件来抓取网站页面。同时检查线上是否能打开，这里是我的<a href="https://www.gzling.top/baidusitemap.xml">baidusitemap.xml文件</a>。</p>
+<p>然后提交线上链接到站点管理平台：</p>
+<p><img src="https://gitee.com/gzl_admin/picture_bed/raw/master/img/2022/01/20220122124444.png"></p>
+<p><img src="https://gitee.com/gzl_admin/picture_bed/raw/master/img/2022/01/20220122134048.png"></p>
+<p>显示状态等待的原因是百度自行抓取地址，Sitemap推送方式就安排上了。</p>
+<ol start="2">
+<li>主动推送(实时)方式</li>
+</ol>
+<p>主动推送最为快速的提交方式，是被百度收录最快的推送方式。通过安装插件实现：</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> hexo-baidu-url-submit --save</code></pre>
+
+<p>安装结束后在博客根目录config文件添加配置：</p>
+<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">baidu_url_submit</span><span class="token punctuation">:</span>
+  <span class="token key atrule">count</span><span class="token punctuation">:</span> <span class="token number">5</span> 				     <span class="token comment">## 提交最新的五个链接</span>
+  <span class="token key atrule">host</span><span class="token punctuation">:</span> www.93bok.com 	     <span class="token comment">## 百度站长平台中注册的域名</span>
+  <span class="token key atrule">token</span><span class="token punctuation">:</span> xxx	             <span class="token comment">## 准入秘钥</span>
+  <span class="token key atrule">path</span><span class="token punctuation">:</span> baidu_urls.txt 		 <span class="token comment">## 文本文档的地址， 新链接会保存在此文本文档里</span></code></pre>
+
+<p>一定要确保_config.yml文件中url的值和百度站长平台注册的域名相同，我的全都是<a target="_blank" rel="noopener" href="https://jmyblog.top/">https://jmyblog.top</a><br>然后在config文件远程部署配置部分，加上：</p>
+<pre class="language-none"><code class="language-none">-  type: baidu_url_submitter	</code></pre>
+
+<p><img src="https://gitee.com/gzl_admin/picture_bed/raw/master/img/2022/01/20220122144956.png"></p>
+<p>然后执行hexo g -d，就可以实现每次部署自动推送文章啦：</p>
+<p>如果出现<img src="https://gitee.com/gzl_admin/picture_bed/raw/master/img/2022/01/20220122145208.png"></p>
+<p>这个错误信息，请把 <code>count</code> 后面的注释删除</p>
+<p><img src="https://gitee.com/gzl_admin/picture_bed/raw/master/img/2022/01/20220122144849.png"></p>
+<blockquote>
+<p>推送原理：<br>新链接的产生， hexo generate 会产生一个文本文件，里面包含最新的链接<br>新链接的提交， hexo deploy 会从上述文件中读取链接，提交至百度搜索引擎</p>
+<p>参考链接：<a target="_blank" rel="noopener" href="https://hui-wang.info/2016/10/23/Hexo%E6%8F%92%E4%BB%B6%E4%B9%8B%E7%99%BE%E5%BA%A6%E4%B8%BB%E5%8A%A8%E6%8F%90%E4%BA%A4%E9%93%BE%E6%8E%A5/">设置主动推送百度SEO</a></p>
+</blockquote>
+<h3 id="文章末尾统一添加“本文结束”标记"><a href="#文章末尾统一添加“本文结束”标记" class="headerlink" title="文章末尾统一添加“本文结束”标记"></a>文章末尾统一添加“本文结束”标记</h3><ol>
+<li><p>主题配置文件取消注释</p>
+<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">custom_file_path</span><span class="token punctuation">:</span>
+  <span class="token comment">#head: source/_data/head.njk</span>
+  <span class="token comment">#header: source/_data/header.njk</span>
+  <span class="token comment">#sidebar: source/_data/sidebar.njk</span>
+  <span class="token comment">#postMeta: source/_data/post-meta.njk</span>
+  <span class="token key atrule">postBodyEnd</span><span class="token punctuation">:</span> source/_data/post<span class="token punctuation">-</span>body<span class="token punctuation">-</span>end.njk
+  <span class="token comment">#footer: source/_data/footer.njk</span>
+  <span class="token comment">#bodyEnd: source/_data/body-end.njk</span>
+  <span class="token comment">#variable: source/_data/variables.styl</span>
+  <span class="token comment">#mixin: source/_data/mixins.styl</span>
+  <span class="token comment">#style: source/_data/styles.styl</span></code></pre></li>
+<li><p>如果hexo的source目录下没有_data文件夹，请先新建_data文件夹在新增post-body-end.njk文件</p>
+</li>
+<li><p>打开post-body-end.njk文件，复制下面脚本粘贴保存</p>
+<pre class="language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>
+    &#123;% if not is_index %&#125;
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value css language-css"><span class="token property">text-align</span><span class="token punctuation">:</span>center<span class="token punctuation">;</span><span class="token property">color</span><span class="token punctuation">:</span> #ccc<span class="token punctuation">;</span><span class="token property">font-size</span><span class="token punctuation">:</span>14px<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">></span></span>-------------本文结束<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>fa fa-paw<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">></span></span>感谢您的阅读-------------<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    &#123;% endif %&#125;
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre></li>
+</ol>
+<h2 id="Hexo添加文章时自动打开编辑器"><a href="#Hexo添加文章时自动打开编辑器" class="headerlink" title="Hexo添加文章时自动打开编辑器"></a>Hexo添加文章时自动打开编辑器</h2><ul>
+<li><p>首先在站点目录下的scripts目录中创建一个JavaScript脚本文件。如果没有这个scripts目录，则新建一个。</p>
+</li>
+<li><p>scripts目录新建的JavaScript脚本文件可以任意取名。</p>
+</li>
+</ul>
+<p>通过这个脚本，我们用其来监听<code>hexo new</code>这个动作，并在检测到<code>hexo new</code>之后，执行编辑器打开的命令。</p>
+<ul>
+<li><p>如果你是windows平台的Hexo用户，则将下列内容写入你的脚本：（直接复制，不用改）</p>
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> spawn <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'child_process'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>exec<span class="token punctuation">;</span>
+hexo<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'new'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+  <span class="token function">spawn</span><span class="token punctuation">(</span><span class="token string">'start  "markdown编辑器绝对路径.exe" '</span> <span class="token operator">+</span> data<span class="token punctuation">.</span>path<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></li>
+<li><p>如果你是Mac平台Hexo用户，则将下列内容写入你的脚本：（直接复制，不用改）</p>
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> exec <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'child_process'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>exec<span class="token punctuation">;</span>
+hexo<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'new'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token function">exec</span><span class="token punctuation">(</span><span class="token string">'open -a "markdown编辑器绝对路径.app" '</span> <span class="token operator">+</span> data<span class="token punctuation">.</span>path<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer"><div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+
+          <div class="reward-container">
+  <div></div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechatpay.png" alt="Mask 微信">
+        <span>微信</span>
+      </div>
+      <div>
+        <img src="/images/alipay.png" alt="Mask 支付宝">
+        <span>支付宝</span>
+      </div>
+
+  </div>
+</div>
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Mask
+  <li>
+    <strong>发布时间： </strong>2022年01月22日 17:10:43 周六
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="http://www.gzling.top/archives/26832.html" title="GitHub + Hexo 打造个人网站详细过程">http://www.gzling.top/archives/26832.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/Hexo/" rel="tag"><i class="fa fa-tag"></i> Hexo</a>
+              <a href="/tags/Next/" rel="tag"><i class="fa fa-tag"></i> Next</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/archives/13268.html" rel="prev" title="重写与重载之间的区别">
+                  <i class="fa fa-chevron-left"></i> 重写与重载之间的区别
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments" id="lv-container" data-id="city" data-uid="MTAyMC81NTI2OS8zMTczNg=="></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">苏ICP备2022001708号-1 </a>
+  </div>
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Mask</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">21k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">19 分钟</span>
+  </span>
+</div>
+
+<div id="days"></div>
+</script>
+<script language="javascript">
+function show_date_time(){
+window.setTimeout("show_date_time()", 1000);
+BirthDay=new Date("01/21/2022 10:00:00");
+today=new Date();
+timeold=(today.getTime()-BirthDay.getTime());
+sectimeold=timeold/1000
+secondsold=Math.floor(sectimeold);
+msPerDay=24*60*60*1000
+e_daysold=timeold/msPerDay
+daysold=Math.floor(e_daysold);
+e_hrsold=(e_daysold-daysold)*24;
+hrsold=setzero(Math.floor(e_hrsold));
+e_minsold=(e_hrsold-hrsold)*60;
+minsold=setzero(Math.floor((e_hrsold-hrsold)*60));
+seconds=setzero(Math.floor((e_minsold-minsold)*60));
+document.getElementById('days').innerHTML="已经安全运行 "+daysold+" 天 "+hrsold+" 时 "+minsold+" 分 "+seconds+" 秒啦 😘😘😘";
+}
+function setzero(i){
+if (i<10)
+{i="0" + i};
+return i;
+}
+show_date_time();
+</script>
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+  
+
+
+  <script class="next-config" data-name="leancloud_visitors" type="application/json">{"enable":true,"app_id":"3dzkImqEeoaE8koJ8UpYv3GU-gzGzoHsz","app_key":"QF9v0bueOH7HVzNhQwm1Eqvo","server_url":null,"security":false}</script>
+  <script src="/js/third-party/statistics/lean-analytics.js"></script>
+
+
+<!-- 页面点击小红心 -->
+
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+<!--动态线条背景
+color：表示线条颜色，三个数字分别为(R,G,B)，默认：（0,0,0）
+opacity：表示线条透明度（0~1），默认：0.5
+count：表示线条的总数量，默认：150
+zIndex：表示背景的z-index属性，css属性用于控制所在层的位置，默认：-1
+-->
+<script type="text/javascript"
+color="220,220,220" opacity='1' zIndex="-2" count="150" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+</script><script src="/js/third-party/comments/livere.js"></script>
+
+</body>
+</html>
