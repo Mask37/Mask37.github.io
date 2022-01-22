@@ -50,7 +50,15 @@
 <!-- 页面点击小红心 -->
 
 <script type="text/javascript" src="/js/src/clicklove.js"></script>
-
+<!--动态线条背景
+color：表示线条颜色，三个数字分别为(R,G,B)，默认：（0,0,0）
+opacity：表示线条透明度（0~1），默认：0.5
+count：表示线条的总数量，默认：150
+zIndex：表示背景的z-index属性，css属性用于控制所在层的位置，默认：-1
+-->
+<script type="text/javascript"
+color="220,220,220" opacity='1' zIndex="-2" count="150" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+</script>
   {{- next_inject('bodyEnd') }}
 </body>
 </html>
