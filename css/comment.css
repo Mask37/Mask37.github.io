@@ -1,0 +1,4 @@
+/*评论区*/
+textarea.el-textarea__inner{
+	min-height: 145px !important;
+}
