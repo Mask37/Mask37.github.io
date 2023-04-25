@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Clash for Windows 汉化</title>
+      <link href="/post/2b71cdad.html"/>
+      <url>/post/2b71cdad.html</url>
+      
+        <content type="html"><![CDATA[<p>Clash 是一个基于规则的跨平台代理软件核心程序，支持 SS &#x2F; VMess 协议<br>官方默认版本不支持中文，但可以通过打补丁的方式解决</p><h2 id="安装原版-Clash"><a href="#安装原版-Clash" class="headerlink" title="安装原版 Clash"></a>安装原版 Clash</h2><ol><li>要想汉化，需要先安装官方原版，推荐去 <a href="https://github.com/Fndroid/clash_for_windows_pkg/releases">作者 Github 主页</a> 下载<br><img src="https://upyun.gzling.top/img/20230425185826.png" alt="Clash for Windows 汉化教程"></li><li>如果下载缓慢可以此站的 <a href="https://repo.trojan-cdn.com/clash_for_windows_pkg/LatestRelease/">最新版客户端下载</a> 下载<ul><li>Windows 请下载 Clash.for.Windows.Setup.[版本号].exe ，一般不要下载带 arm64 的 exe 文件</li><li>macOS 请下载 Clash.for.Windows-[版本号].dmg</li></ul></li><li>下载好后根据引导安装 Clash 即可</li></ol><h2 id="汉化-Clash"><a href="#汉化-Clash" class="headerlink" title="汉化 Clash"></a>汉化 Clash</h2><ol><li>打开汉化补丁作者的 <a href="https://upyun.gzling.top/img/20230425191241.png">Github 主页</a>，<strong>下载解压后就能得到对应版本的</strong> <code>app.asar</code><br><img src="https://upyun.gzling.top/img/20230425190702.png" alt="Clash for Windows 汉化教程"></li><li><strong>退出 Clash</strong></li><li>将新的 <code>app.asar</code> 放到 <code>resources</code> 文件夹<strong>覆盖</strong><br><img src="https://upyun.gzling.top/img/20230425193544.png" alt="Clash for Windows 汉化教程"></li><li><strong>重启 Clash</strong> 即可看到汉化后的效果<br><img src="https://upyun.gzling.top/img/20230425193635.png" alt="Clash for Windows 汉化教程"></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 安装教程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Clash </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Java链接sftp</title>
       <link href="/post/e2652502.html"/>
       <url>/post/e2652502.html</url>
