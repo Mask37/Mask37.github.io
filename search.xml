@@ -48,6 +48,31 @@
     
     
     <entry>
+      <title>Linux修改时区</title>
+      <link href="/post/5434.html"/>
+      <url>/post/5434.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="1-查看系统时间"><a href="#1-查看系统时间" class="headerlink" title="1.查看系统时间"></a>1.查看系统时间</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">date</span><br></pre></td></tr></table></figure><p><img src="https://upyun.gzling.top/img/20230429143726.png"></p><h2 id="2-查看系统时区"><a href="#2-查看系统时区" class="headerlink" title="2.查看系统时区"></a>2.查看系统时区</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">date -R</span><br></pre></td></tr></table></figure><p><img src="https://upyun.gzling.top/img/20230429143808.png"></p><h2 id="3-替换系统时区文件"><a href="#3-替换系统时区文件" class="headerlink" title="3.替换系统时区文件"></a>3.替换系统时区文件</h2><blockquote><p>cp &#x2F;usr&#x2F;share&#x2F;zoneinfo&#x2F;$主时区&#x2F;$次时区 &#x2F;etc&#x2F;localtime</p></blockquote><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime</span><br></pre></td></tr></table></figure><p><img src="https://upyun.gzling.top/img/20230429143847.png"></p><h2 id="4-再次查看系统时区和系统时间"><a href="#4-再次查看系统时区和系统时间" class="headerlink" title="4.再次查看系统时区和系统时间"></a>4.再次查看系统时区和系统时间</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">date</span><br><span class="line">date -R</span><br></pre></td></tr></table></figure><p><img src="https://upyun.gzling.top/img/20230429143945.png"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 安装教程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>VM固定IP</title>
       <link href="/post/5051.html"/>
       <url>/post/5051.html</url>
