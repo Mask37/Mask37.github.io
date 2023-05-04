@@ -48,6 +48,35 @@
     
     
     <entry>
+      <title>使用反射机制造轮子</title>
+      <link href="/post/5e+57.html"/>
+      <url>/post/5e+57.html</url>
+      
+        <content type="html"><![CDATA[<h4 id="对象转Map"><a href="#对象转Map" class="headerlink" title="对象转Map"></a>对象转Map</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> Map&lt;String, Object&gt; <span class="title function_">beanToMap</span><span class="params">(Object object)</span> <span class="keyword">throws</span> IllegalAccessException &#123;</span><br><span class="line">        Map&lt;String, Object&gt; map = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">        Field[] fields = object.getClass().getDeclaredFields();</span><br><span class="line">        <span class="keyword">for</span> (Field field : fields) &#123;</span><br><span class="line">            field.setAccessible(<span class="literal">true</span>);</span><br><span class="line">            map.put(field.getName(), field.get(object));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> map;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 轮子 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+            <tag> 反射 </tag>
+            
+            <tag> 轮子 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Qexo支持又拍云图床</title>
       <link href="/post/7bae.html"/>
       <url>/post/7bae.html</url>
