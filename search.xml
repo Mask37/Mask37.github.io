@@ -48,6 +48,35 @@
     
     
     <entry>
+      <title>@JsonSerialize常用功能</title>
+      <link href="/post/53f7.html"/>
+      <url>/post/53f7.html</url>
+      
+        <content type="html"><![CDATA[<h3 id="引用jar包"><a href="#引用jar包" class="headerlink" title="引用jar包"></a>引用jar包</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.fasterxml.jackson.core<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jackson-databind<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.14.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure><h3 id="BigDecimal使用-JsonSerialize序列化自定义格式"><a href="#BigDecimal使用-JsonSerialize序列化自定义格式" class="headerlink" title="BigDecimal使用@JsonSerialize序列化自定义格式"></a>BigDecimal使用@JsonSerialize序列化自定义格式</h3><h4 id="自定义格式化类并继承JsonSerializer"><a href="#自定义格式化类并继承JsonSerializer" class="headerlink" title="自定义格式化类并继承JsonSerializer"></a>自定义格式化类并继承JsonSerializer</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">BigDecimalSerialize</span> <span class="keyword">extends</span> <span class="title class_">JsonSerializer</span>&lt;BigDecimal&gt; &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">serialize</span><span class="params">(BigDecimal bigDecimal, JsonGenerator jsonGenerator, SerializerProvider serializerProvider)</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">        <span class="keyword">if</span> (Objects.nonNull(bigDecimal)) &#123;</span><br><span class="line">            jsonGenerator.writeString(bigDecimal.setScale(<span class="number">2</span>, RoundingMode.HALF_UP).toPlainString());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h4 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 成绩</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"> <span class="meta">@JsonSerialize(using = BigDecimalSerialize.class)</span></span><br><span class="line"> <span class="keyword">private</span> BigDecimal grades;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 轮子 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+            <tag> JsonSerializer </tag>
+            
+            <tag> 轮子 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>使用反射机制造轮子</title>
       <link href="/post/5e+57.html"/>
       <url>/post/5e+57.html</url>
@@ -66,9 +95,9 @@
             
             <tag> Java </tag>
             
-            <tag> 反射 </tag>
-            
             <tag> 轮子 </tag>
+            
+            <tag> 反射 </tag>
             
         </tags>
       
