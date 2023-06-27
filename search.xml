@@ -48,6 +48,33 @@
     
     
     <entry>
+      <title>Windows环境使用Docker安装MySQL</title>
+      <link href="/post/1312.html"/>
+      <url>/post/1312.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="下载MySQL镜像"><a href="#下载MySQL镜像" class="headerlink" title="下载MySQL镜像"></a>下载MySQL镜像</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull mysql</span><br></pre></td></tr></table></figure><p><img src="https://upyun.gzling.top/markdown/20230627164743.png"></p><h2 id="创建挂载目录"><a href="#创建挂载目录" class="headerlink" title="创建挂载目录"></a>创建挂载目录</h2><p>创建data目录用来挂载数据库文件，创建conf目录用来挂载配置文件</p><p><img src="https://upyun.gzling.top/markdown/image-20230627164838944.png" alt="image-20230627164838944"></p><h2 id="创建my-cnf文件"><a href="#创建my-cnf文件" class="headerlink" title="创建my.cnf文件"></a>创建my.cnf文件</h2><p>在conf目录下新建my.cnf文件，并加入以下内容</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">[client]</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">socket = /d/dockers/mysql/mysqld.sock</span></span><br><span class="line">default-character-set = utf8mb4</span><br><span class="line">[mysqld]</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">pid-file        = /var/run/mysqld/mysqld.pid</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">socket          = /var/run/mysqld/mysqld.sock</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">datadir         = /var/lib/mysql</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">socket = /d/dockers/mysql/mysqld.sock</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">pid-file = /d/dockers/mysql/mysqld.pid</span></span><br><span class="line">datadir = /d/dockers/mysql/data</span><br><span class="line">character_set_server = utf8mb4</span><br><span class="line">collation_server = utf8mb4_bin</span><br><span class="line">secure-file-priv= NULL</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">Disabling symbolic-links is recommended to prevent assorted security risks</span></span><br><span class="line">symbolic-links=0</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">Custom config should go here</span></span><br><span class="line">!includedir /etc/mysql/conf.d/  </span><br></pre></td></tr></table></figure><h2 id="创建容器"><a href="#创建容器" class="headerlink" title="创建容器"></a>创建容器</h2><p>创建一个mysql容器，命令如下：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --name mysql --restart=always -p 3306:3306 -v /e/docker/mysql/data:/var/lib/mysql/ -v /e/docker/mysql/conf/my.cnf:/etc/mysql/my.cnf -e MYSQL_ROOT_PASSWORD=123456 -e MYSQL_ROOT_HOST=% -d mysql:latest --default-authentication-plugin=mysql_native_password</span><br></pre></td></tr></table></figure><p>我这里把数据库文件挂载到了上面创建的data目录，并且上面配置文件中配置的一些日志文件也相应的挂载到了data目录，方便以后查看。</p><p>容器运行完成后，data目录下也自动出现了数据库的文件<br><img src="https://upyun.gzling.top/markdown/image-20230627172942042.png" alt="image-20230627172942042"><br>当把容器删除之后，data目录下的文件依旧存在，下次启动另一个mysql容器时把&#x2F;var&#x2F;lib&#x2F;mysql直接挂载到data目录就可以看到之前创建的数据库，并且数据库中的数据依旧存在。</p><h2 id="使用navicat客户端工具连接"><a href="#使用navicat客户端工具连接" class="headerlink" title="使用navicat客户端工具连接"></a>使用navicat客户端工具连接</h2><p>提示连接成功<br><img src="https://upyun.gzling.top/markdown/image-20230627173043644.png" alt="image-20230627173043644"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 安装教程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> MySQL </tag>
+            
+            <tag> Docker </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>git跨仓库合并</title>
       <link href="/post/3a5a.html"/>
       <url>/post/3a5a.html</url>
@@ -77,7 +104,7 @@
       
         <tags>
             
-            <tag> java </tag>
+            <tag> Java </tag>
             
             <tag> JsonSerializer </tag>
             
