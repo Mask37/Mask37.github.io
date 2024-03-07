@@ -48,6 +48,31 @@
     
     
     <entry>
+      <title>自用软件分享</title>
+      <link href="/post/be3e.html"/>
+      <url>/post/be3e.html</url>
+      
+        <content type="html"><![CDATA[<blockquote><p><strong>记录几款自己使用的软件</strong></p></blockquote><h2 id="截图"><a href="#截图" class="headerlink" title="截图"></a>截图</h2><h3 id="PixPin"><a href="#PixPin" class="headerlink" title="PixPin"></a>PixPin</h3><p><strong>之前一直在使用</strong><code>snipaste</code>，但有时需要使用长截图，就不得不使用其他的软件进行截图。</p><p><code>PixPin</code>这个软件的优势就是<code>snipaste</code>有的功能他基本都有，而且还有 <strong>OCR</strong> 和 <strong>长截图</strong> 功能，完全满足日常使用</p><p><strong>PixPin 下载地址：</strong><a href="https://pixpinapp.com/">https://pixpinapp.com/</a></p><p><strong>Snipaste 下载地址：</strong><a href="https://zh.snipaste.com/">https://zh.snipaste.com/</a></p><h2 id="SSH客户端"><a href="#SSH客户端" class="headerlink" title="SSH客户端"></a>SSH客户端</h2><h3 id="WindTerm"><a href="#WindTerm" class="headerlink" title="WindTerm"></a>WindTerm</h3><p><strong>WindTerm是一款 C 语言开发的跨平台（Windows、MacOS、Linux） SSH 客户端，完全免费用于商业和非商业用途，没有限制</strong></p><p><strong>下载地址：</strong><a href="https://github.com/kingToolbox/WindTerm/releases">https://github.com/kingToolbox/WindTerm/releases</a></p><h2 id="卸载"><a href="#卸载" class="headerlink" title="卸载"></a>卸载</h2><h3 id="Geek"><a href="#Geek" class="headerlink" title="Geek"></a>Geek</h3><p><strong>Geek Uninstaller执行深入扫描进程，并清除软件卸载后留下的垃圾；它是一款绿色软件，无需安装.</strong></p><p><strong>下载地址：</strong><a href="https://geekuninstaller.com/download">https://geekuninstaller.com/download</a></p><h2 id="内存清理"><a href="#内存清理" class="headerlink" title="内存清理"></a>内存清理</h2><h3 id="Mem-Reduct"><a href="#Mem-Reduct" class="headerlink" title="Mem Reduct"></a>Mem Reduct</h3><p><strong>是国外一款专业的内存清理软件，可配置自动清理</strong></p><p><strong>下载地址：</strong><a href="https://github.com/henrypp/memreduct/releases">https://github.com/henrypp/memreduct/releases</a></p><h2 id="远程软件"><a href="#远程软件" class="headerlink" title="远程软件"></a>远程软件</h2><h3 id="AnyViewer"><a href="#AnyViewer" class="headerlink" title="AnyViewer"></a>AnyViewer</h3><p><strong>下载地址：</strong><a href="https://www.anyviewer.cn/download.html">https://www.anyviewer.cn/download.html</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 办公 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 工具 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Windows环境使用Docker安装MySQL</title>
       <link href="/post/1312.html"/>
       <url>/post/1312.html</url>
