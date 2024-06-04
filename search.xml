@@ -48,6 +48,29 @@
     
     
     <entry>
+      <title>adapter1.1.5不能同步数据到ES6</title>
+      <link href="//post/adapter-115-cannot-synchronize-data-to-es6-sqww7.html"/>
+      <url>//post/adapter-115-cannot-synchronize-data-to-es6-sqww7.html</url>
+      
+        <content type="html"><![CDATA[<h3 id="问题：如果修改数据库某张表的某个字段时出现如下日志："><a href="#问题：如果修改数据库某张表的某个字段时出现如下日志：" class="headerlink" title="问题：如果修改数据库某张表的某个字段时出现如下日志："></a><strong>问题：如果修改数据库某张表的某个字段时出现如下日志：</strong></h3><blockquote><p>2024-06-04 15:32:18.177 [pool-2-thread-1] DEBUG c.a.o.canal.client.adapter.es.core.service.ESSyncService - DML: {“data”:null,”database”:”aws”,”destination”:”CANAL_GOODS”,”es”:1717486338000,”groupId”:”g1”,”isDdl”:false,”old”:null,”pkNames”:null,”sql”:”&#x2F;* ApplicationName&#x3D;DataGrip 2023.1.2 *&#x2F; UPDATE aws.t_aws_account t SET t.base_account_no &#x3D; 21739923669811712 WHERE t.account_no &#x3D; 273366981196800”,”table”:”t_aws_account”,”ts”:1717486338173,”type”:”UPDATE”}</p><p>Affected indexes: aws_account_dev</p></blockquote><p>从日志中看到old属性为null，说明没有获取到源数据信息，从而修改无效无法同步修改后的数据到ES中。解决此问题需要做如下设置</p><p>设置源数据库MySql的my.cnf的binlog配置。把两个关键的参数做如下设置</p><blockquote><p>binlog_format &#x3D; ROW</p><p>binlog_row_image &#x3D; FULL</p></blockquote><p>使云数据库修改后立即生效，其他模式可能需要重启</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> canal </tag>
+            
+            <tag> elasticsearch </tag>
+            
+            <tag> 踩坑记录 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>开机启动批处理</title>
       <link href="//post/putting-on-the-batch-processing-1i1bcr.html"/>
       <url>//post/putting-on-the-batch-processing-1i1bcr.html</url>
